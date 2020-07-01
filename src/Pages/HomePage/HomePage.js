@@ -10,8 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-
-
+import { Link } from 'react-router-dom';
 
 const HomePage = () => (
     <>
@@ -37,7 +36,7 @@ const HomePage = () => (
                     &nbsp;
                 </Col>
                 <Col>
-                    <Button variant="primary" size="lg" block>Login</Button>
+                    <Link to="/sign-in"><Button variant="primary" size="lg" block>Sign In</Button></Link>
                 </Col>
                 <Col>
                     &nbsp;
@@ -53,7 +52,7 @@ const HomePage = () => (
                     &nbsp;
                 </Col>
                 <Col>
-                    <Button variant="primary" size="lg" block>Sign Up</Button>
+                    <Button variant="primary" size="lg" block>Register</Button>
                 </Col>
                 <Col>
                     &nbsp;

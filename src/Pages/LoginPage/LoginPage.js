@@ -1,32 +1,102 @@
 import React from 'react';
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+
+import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
+
+
 const LoginPage = () => (
     <>
-        <h1>Hello World!</h1>
+        <Container>
+            <Row>
+                <Col>
+                    <h2>Sign In</h2>
+                </Col>
+                <Col>
+                    &nbsp;
+                </Col>
+                <Col>
+                    &nbsp;
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    &nbsp;
+                </Col>
+                <Col>
+                <Form>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
 
-        <p>
-            What is Lorem Ipsum?
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Remember Me" />
+                    </Form.Group>
 
-        <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-            Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-            Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-        </p>
+                    <Form.Group controlId="formBasicLink">
+                        <Link to="/forgot-password">Forgot Your Password?</Link>
+                    </Form.Group>
 
-        <p>
-            Where does it come from?
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
-            a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
-            discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
-            very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-        </p>
+                    <Button variant="primary" type="submit">
+                        Sign In
+                    </Button>
+                </Form>
+                </Col>
+                <Col>
+                    &nbsp;
+                </Col>
+            </Row>
+        </Container>
+
+        <p>&nbsp;</p>
+
+        <Container>
+            <Row>
+                <Col>
+                    &nbsp;
+                </Col>
+                <Col>
+                    -- OR --
+                </Col>
+                <Col>
+                    &nbsp;
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    Sign in with...
+                </Col>
+                <Col>
+                    &nbsp;
+                </Col>
+                <Col>
+                    &nbsp;
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    Facebook
+                </Col>
+                <Col>
+                    Twitter
+                </Col>
+                <Col>
+                    Google
+                </Col>
+            </Row>
+        </Container>
 
     </>
 );
