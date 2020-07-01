@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../Images/logo5-200x200.png';
 import MktgImage1 from '../Images/1479225-556x370.jpg';
 import MktgImage2 from '../Images/1471493-556x370.jpg';
+import './HomePage.css';
 
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
@@ -33,7 +34,13 @@ const HomePage = () => (
         <Container>
             <Row>
                 <Col>
+                    &nbsp;
+                </Col>
+                <Col>
                     <Button variant="primary" size="lg" block>Login</Button>
+                </Col>
+                <Col>
+                    &nbsp;
                 </Col>
             </Row>
             <Row>
@@ -43,7 +50,13 @@ const HomePage = () => (
             </Row>
             <Row>
                 <Col>
-                <Button variant="primary" size="lg" block>Sign Up</Button>
+                    &nbsp;
+                </Col>
+                <Col>
+                    <Button variant="primary" size="lg" block>Sign Up</Button>
+                </Col>
+                <Col>
+                    &nbsp;
                 </Col>
             </Row>
         </Container>
@@ -52,28 +65,30 @@ const HomePage = () => (
 
         <Container>
             <Row>
-                <Col>
-                    <Image alt="Dutch Oven Paella" src={MktgImage1}  />
+                <Col sm={4}>
+                    <Image alt="Dutch Oven Paella" src={MktgImage1} fluid />
                 </Col>
-                <Col>
+                <Col sm={8}>
                     Text about what the app can do. <br/>
                     Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text 
                     Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
                     Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
                 </Col>
             </Row>
-        </Container>
-
-        <Container>
             <Row>
                 <Col>
+                    &nbsp;
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={8}>
                     Text about what the app can do. <br/>
                     Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text 
                     Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
                     Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
                 </Col>
-                <Col>
-                <Image alt="Honey-Glazed Citrus-Roasted Carrots" src={MktgImage2}  />
+                <Col sm={4}>
+                    <Image alt="Honey-Glazed Citrus-Roasted Carrots" src={MktgImage2} fluid />
                 </Col>
             </Row>
         </Container>
