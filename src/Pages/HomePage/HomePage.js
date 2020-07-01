@@ -1,8 +1,11 @@
 import React from 'react';
 import Footer from '../Footer/Footer';
+// import Header from '../Header/Header';
 
 const HomePage = () => (
     <>
+        {/* <Header /> */}
+        {/* Likely not for the landing page */}
         <h1>AppiMeals</h1>
 
         <p>

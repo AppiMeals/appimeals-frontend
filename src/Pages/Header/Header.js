@@ -2,7 +2,21 @@ import React from 'react';
 
 const Header = () => (
     <>
-        <h1>This is our Header.</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        [ AppiMeals Logo ]
+                    </td>
+                    <td>
+                        [ Page Name ]
+                    </td>
+                    <td>
+                        [ Navigation ]
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
 
     </>
