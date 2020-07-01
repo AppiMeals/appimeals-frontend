@@ -7,8 +7,8 @@ import HomePage from './Pages/HomePage/HomePage';
 import LoginPage from './Pages/AuthenticationPages/LoginPage';
 import NavBar from './Components/NavBar/NavBar';
 import './App.css';
-
-//import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './Components/Footer/Footer';
 
 class App extends Component {
   render() {
@@ -20,6 +20,7 @@ class App extends Component {
             <Route path="/" component={HomePage} exact />
             <Route path="/sign-in" component={LoginPage} exact />
           </div>
+          <Footer /> 
         </div>
       </Router>
     );
