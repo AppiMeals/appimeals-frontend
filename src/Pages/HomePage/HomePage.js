@@ -1,26 +1,19 @@
 import React from 'react';
-// import Footer from '../Footer/Footer';
-// import Header from '../Header/Header';
- import Logo from '../Images/logo5-200x200.png';
- import MktgImage1 from '../Images/1479225-556x370.jpg';
- import MktgImage2 from '../Images/1471493-556x370.jpg';
+import Logo from '../Images/logo5-200x200.png';
+import MktgImage1 from '../Images/1479225-556x370.jpg';
+import MktgImage2 from '../Images/1471493-556x370.jpg';
 
- import Image from 'react-bootstrap/Image';
- import Container from 'react-bootstrap/Container';
- import Row from 'react-bootstrap/Row';
- import Col from 'react-bootstrap/Col';
- import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 
 
-// console.log(AppiMealLogo200x200);
 
 const HomePage = () => (
     <>
-        {/* <Header /> */}
-        {/* Likely not for the landing page */}
-        <h1>AppiMeals</h1>
-
         <Container>
             <Row>
                 <Col>
@@ -34,6 +27,8 @@ const HomePage = () => (
                 </Col>
             </Row>
         </Container>
+
+        <p>&nbsp;</p>
 
         <Container>
             <Row>
@@ -53,34 +48,37 @@ const HomePage = () => (
             </Row>
         </Container>
 
+        <p>&nbsp;</p>
 
-
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <img alt="Dutch Oven Paella" src={MktgImage1}  />
-                    </td>
-                    <td>
-                        Text about what the app can do. <br/>
-                        Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text 
-                        Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
-                        Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+        <Container>
+            <Row>
+                <Col>
+                    <Image alt="Dutch Oven Paella" src={MktgImage1}  />
+                </Col>
+                <Col>
                     Text about what the app can do. <br/>
-                        Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text 
-                        Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
-                        Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text 
-                    </td>
-                    <td>
-                        <img alt="Honey-Glazed Citrus-Roasted Carrots" src={MktgImage2} />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text 
+                    Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
+                    Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
+                </Col>
+            </Row>
+        </Container>
+
+        <Container>
+            <Row>
+                <Col>
+                    Text about what the app can do. <br/>
+                    Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text 
+                    Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
+                    Marketing Information.... make up some text Marketing Information.... make up some text Marketing Information.... make up some text
+                </Col>
+                <Col>
+                <Image alt="Honey-Glazed Citrus-Roasted Carrots" src={MktgImage2}  />
+                </Col>
+            </Row>
+        </Container>
+
+
 
         {/* <Footer /> */}
     </>

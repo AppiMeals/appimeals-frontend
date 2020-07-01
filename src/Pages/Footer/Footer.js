@@ -1,47 +1,51 @@
 import React from 'react';
+import Logo from '../Images/logo5-200x200.png';
+import FBLogo from '../Images/iconfinder_icon-02_2515845.png';
+import TwitterLogo from '../Images/iconfinder_icon-03_2515844.png';
+import './Footer.css';
+
+import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 const Footer = () => (
-    <>
-        <table>
-            <tbody>
-                <tr>
-                    <td width="33%">
-                        [AppiMeals Logo] <br/>
-                        <img src="" height="200" width="200"></img>
-                    </td>
-                    <td>
-                        [contact us button]
-                    </td>
-                    <td>
-                        [about us & faq button]
-                    </td>
-                    <td>
-                        [blog button]
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <table border="solid">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="" height="100" width="100"></img><br/>
-                                        Facebook Logo 
-                                    </td>
-                                    <td>
-                                        <img src="" height="100" width="100"></img><br/>
-                                        Twitter Logo
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td colSpan="3">
-                        &nbsp;
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <>  
+        <p>&nbsp;</p>
+
+        <Container>
+            <Row>
+                <Col>
+                    <Image className="appiMealsLogo" alt="AppiMeals Logo" src={Logo}  />
+                </Col>
+                <Col className="contact-buttons">
+                    <Button>Contact Us</Button>
+                    &nbsp;
+                    <Button>About Us &amp; FAQ</Button>
+                    &nbsp;
+                    <Button>Blog</Button>
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={4}>
+                    <Image className="logo" alt="Facebook Logo" src={FBLogo} />
+
+                    <Image className="logo" alt="Twitter Logo" src={TwitterLogo}  />
+                </Col>
+                <Col sm={8}>
+                    &nbsp;
+                </Col>
+            </Row>
+        </Container>
+
+        <Container>
+            <Row>
+                <Col>
+                    &copy; 2020 AppiMeals
+                </Col>
+            </Row>
+        </Container>
 
     </>
 );
