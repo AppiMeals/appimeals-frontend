@@ -52,7 +52,7 @@ const HomePage = () => (
                     &nbsp;
                 </Col>
                 <Col>
-                    <Button variant="primary" size="lg" block>Register</Button>
+                    <Link to="/SignUp"><Button variant="primary" size="lg" block>Register</Button></Link>
                 </Col>
                 <Col>
                     &nbsp;
