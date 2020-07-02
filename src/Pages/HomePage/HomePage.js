@@ -33,29 +33,31 @@ const HomePage = () => (
         <Container>
             <Row>
                 <Col>
-                    &nbsp;
-                </Col>
-                <Col>
-                    <Link to="/sign-in"><Button variant="primary" size="lg" block>Sign In</Button></Link>
-                </Col>
-                <Col>
-                    &nbsp;
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    &nbsp;
+                    <Link to="/sign-in">
+                        <Button 
+                            variant="primary" 
+                            size="lg" 
+                            block>
+                            Sign In
+                        </Button>
+                    </Link>
                 </Col>
             </Row>
             <Row>
                 <Col>
                     &nbsp;
                 </Col>
+            </Row>
+            <Row>
                 <Col>
-                    <Link to="/SignUp"><Button variant="primary" size="lg" block>Register</Button></Link>
-                </Col>
-                <Col>
-                    &nbsp;
+                    <Link to="/SignUp">
+                        <Button 
+                            variant="primary" 
+                            size="lg" 
+                            block>
+                            Register 
+                        </Button>
+                    </Link>
                 </Col>
             </Row>
         </Container>
