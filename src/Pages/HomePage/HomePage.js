@@ -1,3 +1,9 @@
+/*
+ToDo:
+1. Improve marketing text
+
+*/
+
 import React from 'react';
 import Logo from '../../Images/logo5-200x200.png';
 import MktgImage1 from '../../Images/1479225-556x370.jpg';
@@ -33,29 +39,35 @@ const HomePage = () => (
         <Container>
             <Row>
                 <Col>
-                    &nbsp;
-                </Col>
-                <Col>
-                    <Link to="/sign-in"><Button variant="primary" size="lg" block>Sign In</Button></Link>
-                </Col>
-                <Col>
-                    &nbsp;
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    &nbsp;
+                    <Link to="/sign-in">
+                        <Button renderAs="button" 
+                            variant="primary" 
+                            size="lg" 
+                        >
+                            <span>
+                                Sign In
+                            </span>
+                        </Button>
+                    </Link>
                 </Col>
             </Row>
             <Row>
                 <Col>
                     &nbsp;
                 </Col>
+            </Row>
+            <Row>
                 <Col>
-                    <Button variant="primary" size="lg" block>Register</Button>
-                </Col>
-                <Col>
-                    &nbsp;
+                    <Link to="/SignUp">
+                        <Button renderAs="button" 
+                            variant="primary" 
+                            size="lg" 
+                        >
+                            <span>
+                                Register
+                            </span>
+                        </Button>
+                    </Link>
                 </Col>
             </Row>
         </Container>
@@ -92,9 +104,6 @@ const HomePage = () => (
             </Row>
         </Container>
 
-
-
-        {/* <Footer /> */}
     </>
 );
 

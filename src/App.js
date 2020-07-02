@@ -4,6 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 import HomePage from './Pages/HomePage/HomePage';
+import Registration from './Pages/Registration/Registration';
 import LoginPage from './Pages/AuthenticationPages/LoginPage';
 import NavBar from './Components/NavBar/NavBar';
 import './App.css';
@@ -19,6 +20,7 @@ class App extends Component {
           <div id="page-body">
             <Route path="/" component={HomePage} exact />
             <Route path="/sign-in" component={LoginPage} exact />
+            <Route path="/SignUp" component={Registration} exact />
           </div>
           <Footer /> 
         </div>

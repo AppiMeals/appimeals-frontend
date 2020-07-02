@@ -1,3 +1,14 @@
+/*
+ToDo:
+
+1. Landing pages for Contact Us, About Us & FAQ, and Blog
+2.  Link these to those landing pages ^^^
+
+3.  Set up FB and Twitter???
+4.  Link these to those ??
+
+*/
+
 import React from 'react';
 import Logo from '../../Images/logo5-200x200.png';
 import FBLogo from '../../Images/iconfinder_icon-02_2515845.png';
@@ -10,6 +21,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import { Link } from 'react-router-dom';
+
+
 const Footer = () => (
     <>  
         <p>&nbsp;</p>
@@ -17,9 +31,11 @@ const Footer = () => (
         <Container>
             <Row>
                 <Col>
+                <Link to="/">
                     <Image className="appiMealsLogo" alt="AppiMeals Logo" src={Logo}  />
+                </Link>
                 </Col>
-                <Col className="contact-buttons">
+                <Col className="contact-buttons" xl={4}>
                     <Button>Contact Us</Button>
                     &nbsp;
                     <Button>About Us &amp; FAQ</Button>
