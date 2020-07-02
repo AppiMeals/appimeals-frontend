@@ -19,7 +19,7 @@ const Footer = () => (
                 <Col>
                     <Image className="appiMealsLogo" alt="AppiMeals Logo" src={Logo}  />
                 </Col>
-                <Col className="contact-buttons">
+                <Col className="contact-buttons" xl={4}>
                     <Button>Contact Us</Button>
                     &nbsp;
                     <Button>About Us &amp; FAQ</Button>
