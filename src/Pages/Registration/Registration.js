@@ -1,3 +1,13 @@
+/*
+ToDo
+
+1.  Finish form handling
+
+
+
+*/
+
+
 import React, { useState } from 'react';
 import Logo from '../../Images/logo5-200x200.png';
 import './Registration.css';
@@ -8,6 +18,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+
+import { Link } from 'react-router-dom';
 
 
 function SubmitRegistration(props) {
@@ -78,7 +90,9 @@ return(
         <Container className="left">
             <Row>
                 <Col>
-                    <Image alt="AppiMeals Logo" className="miniLogo" src={Logo}  /> 
+                    <Link to="/">
+                        <Image alt="AppiMeals Logo" className="miniLogo" src={Logo}  /> 
+                    </Link>
                 </Col>
             </Row>
         </Container>

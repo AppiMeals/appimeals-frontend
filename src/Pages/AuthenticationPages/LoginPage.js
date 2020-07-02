@@ -1,3 +1,14 @@
+/*
+ToDo:
+
+1.  Add "Sign in With..." buttons
+2.  Implement OAUTH in Facebook/Twitter/Google or decide
+        to leave these as placeholders
+
+3.  Add Event Handling
+
+*/
+
 import React from 'react';
 
 import Container from 'react-bootstrap/Container';
