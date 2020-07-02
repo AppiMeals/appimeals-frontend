@@ -4,12 +4,14 @@ ToDo:
 1.  Add "Sign in With..." buttons
 2.  Implement OAUTH in Facebook/Twitter/Google or decide
         to leave these as placeholders
+        === https://www.codeproject.com/Articles/5258733/Login-With-Google-Using-ReactJS
 
-3.  Add Event Handling
+3.  Investigate strange warning from clicking 'Remember Me' even though it prints in console 
+    expected.
 
 */
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -19,8 +21,27 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 
+function SignIn(props) {
 
-const LoginPage = () => (
+    const [userName, setUserName] = useState("");
+    const handleUserNameChange = e => {
+        setUserName(e.target.value);
+    }
+
+    const [password, setPassword] = useState("");
+    const handlePasswordChange = e => {
+        setPassword(e.target.value);
+    }
+
+    const[checked, setChecked] = useState(false);
+    const handleClick = () => setChecked(!checked);
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.SignIn(userName, password, checked);
+    }
+
+    return (
     <>
         <Container>
             <Row>
@@ -32,17 +53,36 @@ const LoginPage = () => (
                 <Col>
                 <Form>
                     <Form.Group>
-                        <Form.Control type="email" placeholder="Email Address" />
+                        <Form.Control 
+                            type="email" 
+                            placeholder="Email Address" 
+                            onChange = {handleUserNameChange}
+                            value={userName} 
+                        />
 
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control 
+                            type="password" 
+                            placeholder="Password" 
+                            onChange = {handlePasswordChange}
+                            value={password} 
+                        />
 
-                        <Form.Check type="checkbox" label="Remember Me" />
+                        <Form.Check 
+                            type="checkbox" 
+                            label="Remember Me" 
+                            onClick = {handleClick}
+                            checked={checked} 
+                        />
 
                         <Link to="/forgot-password">Forgot Your Password?</Link>
 
                         <br/>
 
-                        <Button variant="primary" type="submit">
+                        <Button 
+                            variant="primary" 
+                            type="submit"
+                            onClick = {handleSubmit}
+                        >
                             Sign In
                         </Button>
                     </Form.Group>
@@ -81,6 +121,9 @@ const LoginPage = () => (
         </Container>
 
     </>
-);
 
-export default LoginPage;
+    );
+
+}
+
+export default SignIn;

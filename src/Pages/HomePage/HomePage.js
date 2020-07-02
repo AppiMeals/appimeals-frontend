@@ -40,19 +40,10 @@ const HomePage = () => (
             <Row>
                 <Col>
                     <Link to="/sign-in">
-                        {/* <Button 
-                            className = "hover"
-                            variant="primary" 
-                            size="lg" 
-                            block>
-                            Sign In
-                        </Button> */}
-
                         <Button renderAs="button" 
                             variant="primary" 
                             size="lg" 
-                            //block
-                            >
+                        >
                             <span>
                                 Sign In
                             </span>
@@ -68,18 +59,10 @@ const HomePage = () => (
             <Row>
                 <Col>
                     <Link to="/SignUp">
-                        {/* <Button 
-                            variant="primary" 
-                            size="lg" 
-                            block>
-                            Register 
-                        </Button> */}
-
                         <Button renderAs="button" 
                             variant="primary" 
                             size="lg" 
-                            //block
-                            >
+                        >
                             <span>
                                 Register
                             </span>
@@ -121,9 +104,6 @@ const HomePage = () => (
             </Row>
         </Container>
 
-
-
-        {/* <Footer /> */}
     </>
 );
 
