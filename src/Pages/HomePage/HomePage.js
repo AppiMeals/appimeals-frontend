@@ -10,15 +10,12 @@ import MktgImage1 from '../../Images/1479225-556x370.jpg';
 import MktgImage2 from '../../Images/1471493-556x370.jpg';
 import './HomePage.css';
 
-import Image from 'react-bootstrap/Image';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import {Image, Container, Row, Col, Button } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 
-const HomePage = () => (
+const HomePage = () => {
+    return (
     <>
         <Container>
             <Row>
@@ -40,7 +37,7 @@ const HomePage = () => (
             <Row>
                 <Col>
                     <Link to="/SignIn">
-                        <Button renderAs="button" 
+                        <Button  
                             variant="primary" 
                             size="lg" 
                         >
@@ -59,7 +56,7 @@ const HomePage = () => (
             <Row>
                 <Col>
                     <Link to="/SignUp">
-                        <Button renderAs="button" 
+                        <Button 
                             variant="primary" 
                             size="lg" 
                         >
@@ -105,6 +102,6 @@ const HomePage = () => (
         </Container>
 
     </>
-);
+)};
 
 export default HomePage;
