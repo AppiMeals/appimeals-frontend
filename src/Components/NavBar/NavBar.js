@@ -10,7 +10,7 @@ import {Navbar, Nav, FormControl, Button, Form} from 'react-bootstrap';
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/sign-in">Sign In</Nav.Link>
+                <Nav.Link href="/SignIn">Sign In</Nav.Link>
             </Nav>
             <Form inline>
                 <FormControl type="text" placeholder="Recipe" className="mr-sm-2" />
