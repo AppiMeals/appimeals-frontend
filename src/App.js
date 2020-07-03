@@ -3,13 +3,20 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
+
 import HomePage from './Pages/HomePage/HomePage';
+import BrowseRecipes from './Pages/BrowseRecipes/BrowseRecipes';
 import Registration from './Pages/Registration/Registration';
 import SignInPage from './Pages/SignInPage/SignInPage';
+
 import NavBar from './Components/NavBar/NavBar';
+import Footer from './Components/Footer/Footer';
+
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './Components/Footer/Footer';
+
+
 
 class App extends Component {
   render() {
@@ -21,6 +28,7 @@ class App extends Component {
             <Route path="/" component={HomePage} exact />
             <Route path="/SignIn" component={SignInPage} exact />
             <Route path="/SignUp" component={Registration} exact />
+            <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
           </div>
           <Footer /> 
         </div>
