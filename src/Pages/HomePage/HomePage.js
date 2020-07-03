@@ -39,7 +39,7 @@ const HomePage = () => (
         <Container>
             <Row>
                 <Col>
-                    <Link to="/sign-in">
+                    <Link to="/SignIn">
                         <Button renderAs="button" 
                             variant="primary" 
                             size="lg" 
