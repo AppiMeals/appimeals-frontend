@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import HomePage from './Pages/HomePage/HomePage';
 import Registration from './Pages/Registration/Registration';
-import LoginPage from './Pages/AuthenticationPages/LoginPage';
+import SignInPage from './Pages/SignInPage/SignInPage';
 import NavBar from './Components/NavBar/NavBar';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,7 +19,7 @@ class App extends Component {
           <NavBar />
           <div id="page-body">
             <Route path="/" component={HomePage} exact />
-            <Route path="/sign-in" component={LoginPage} exact />
+            <Route path="/SignIn" component={SignInPage} exact />
             <Route path="/SignUp" component={Registration} exact />
           </div>
           <Footer /> 
