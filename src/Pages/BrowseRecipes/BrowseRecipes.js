@@ -12,7 +12,7 @@ import { CardDeck } from 'react-bootstrap';
 const BrowseRecipes = () => {
     return (
     <>
-    <div class="main__section">
+    <div className="main__section">
 
         <h1>Browse Recipes</h1>
 
