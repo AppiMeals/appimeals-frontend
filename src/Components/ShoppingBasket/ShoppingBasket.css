@@ -1,0 +1,14 @@
+  .recipeBaskett{
+      margin: 10px auto;
+      
+    
+  }
+
+.delete__button{
+    float: right;
+}
+
+.headerName{
+    color: black;
+    font-weight: bold;
+}
