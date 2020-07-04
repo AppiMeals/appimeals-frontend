@@ -8,6 +8,7 @@ import HomePage from './Pages/HomePage/HomePage';
 import BrowseRecipes from './Pages/BrowseRecipes/BrowseRecipes';
 import Registration from './Pages/Registration/Registration';
 import SignInPage from './Pages/SignInPage/SignInPage';
+import MyMealShop from './Pages/MyMealShop/MyMealShop';
 
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/SignIn" component={SignInPage} exact />
             <Route path="/SignUp" component={Registration} exact />
             <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
+            <Route path="/MyMealShop" component={MyMealShop} exact />
           </div>
           <Footer /> 
         </div>
