@@ -6,9 +6,6 @@ ToDo:
         to leave these as placeholders
         === https://www.codeproject.com/Articles/5258733/Login-With-Google-Using-ReactJS
 
-3.  Investigate strange warning from clicking 'Remember Me' even though it prints in console 
-    expected.
-
 */
 
 import React, { useState } from 'react';
@@ -70,7 +67,7 @@ function SignIn(props) {
                         <Form.Check 
                             type="checkbox" 
                             label="Remember Me" 
-                            onClick = {handleClick}
+                            onChange = {handleClick}
                             checked={checked} 
                         />
 
@@ -93,6 +90,11 @@ function SignIn(props) {
         </Container>
 
         <p>&nbsp;</p>
+
+
+        {console.log(userName)}
+        {console.log(password)}
+        {console.log(checked)}
 
         <Container>
             <Row>
