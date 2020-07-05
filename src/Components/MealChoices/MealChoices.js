@@ -30,24 +30,87 @@ function MealChoices(props) {
     }
 
     return (
-            <>
-                <CardDeck>
-
-                    <Card>
-
-                        <Card.Body>
-                            <Card.Title>Monday</Card.Title>
-                            <Card.Text> Recipe</Card.Text>
-
-                            <button onClick={handleTextChange}> +</button>
-                            {text}
-                            <button onClick={handleMinusChange}>-</button>
-                        </Card.Body>
-                    </Card>
-
-
-                </CardDeck>
-            </>
+        <>
+        
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Monday
+                        </Card.Title>
+                        <Card.Text> Recipe
+                        <button onClick={handleTextChange}> +</button>
+                         {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Tueday
+                        </Card.Title>
+                        <Card.Text> Recipe
+                        <button onClick={handleTextChange}> +</button>
+                         {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Wednesday
+                        </Card.Title>
+                        <Card.Text> Recipe
+                        <button onClick={handleTextChange}> +</button>
+                         {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Thursday
+                        </Card.Title>
+                        <Card.Text> Recipe
+                        <button onClick={handleTextChange}> +</button>
+                         {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Friday
+                        </Card.Title>
+                        <Card.Text> Recipe
+                        <button onClick={handleTextChange}> +</button>
+                         {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Saturday
+                        </Card.Title>
+                        <Card.Text> Recipe
+                        <button onClick={handleTextChange}> +</button>
+                         {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Sunday
+                        </Card.Title>
+                        <Card.Text> Recipe
+                        <button onClick={handleTextChange}> +</button>
+                         {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+           
+        </>
     )
 };
 
