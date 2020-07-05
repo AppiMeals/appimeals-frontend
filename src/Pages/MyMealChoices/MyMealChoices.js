@@ -4,12 +4,14 @@ import { CardDeck , Card} from 'react-bootstrap';
 
 import './MyMealChoices.css';
 import MealChoices from '../../Components/MealChoices/MealChoices';
+import TotalPrice from '../../Components/TotalPrice/TotalPrice';
 
 
-const MyMealChoices = () => {
+const MyMealChoices = (props) => {
     const [ingredients, setIngredients] = useState([
         { ingredientName: "tofu", price: 2, ingredientId: 1 },
-        { ingredientName: "rice", price: 4, ingredientId: 21 }
+        { ingredientName: "rice", price: 4, ingredientId: 21 },
+        { ingredientName: "Food", price: 14, ingredientId: 21 }
     ]);
 
     const [recipeMenu, setRecipe] = useState([
@@ -19,6 +21,7 @@ const MyMealChoices = () => {
         }
     ])
 
+  
 
 
     return (
@@ -33,17 +36,9 @@ const MyMealChoices = () => {
                         price={ing.price} />
                 })}
 
-                <Card style={{ width: '18rem' }}>
-                    <Card.Body>
-                        <Card.Title>Total Price</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">inc VAT</Card.Subtitle>
-                        <Card.Text>
-                            
-                        </Card.Text>
-                        <Card.Link href="#">Card Link</Card.Link>
-                        <Card.Link href="#">Another Link</Card.Link>
-                    </Card.Body>
-                </Card>
+                <TotalPrice/>
+
+             
 
 
 

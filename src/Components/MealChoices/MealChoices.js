@@ -38,9 +38,6 @@ function MealChoices(props) {
     let newPrice ="£"+(priceIng* text)
 
 
-
-
-
     return (
     <>
 
