@@ -12,7 +12,7 @@ import MyMealShop from './Pages/MyMealShop/MyMealShop';
 import SuperMarketLogIn from './Pages/SuperMarketLogIn/SuperMarketLogIn';
 
 
-import LoginExample from './Pages/LoginExample/LoginExample1';
+import LoginExample from './Pages/LoginExample/LoginExample';
 
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
