@@ -5,23 +5,27 @@ ToDo
 
 2.  Implement more elegant solution for DoB drop down
 
-
-
 */
 
 
 import React, { useState } from 'react';
-import Logo from '../../Images/logo5-200x200.png';
+//import Logo from '../../Images/logo5-200x200.png';
 import './Registration.css';
 
 import Form from 'react-bootstrap/Form';
-import Image from 'react-bootstrap/Image';
+//import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+
+
+// These may need to be commented out until other decisions are made, but there's work I can do here in the meantime.
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';   // Making ready for interacting with our AWS Database
+// import Cookies from 'js-cookie';  // Making ready for dropping an Authentication cookie into the User's Browser
 
 
 function SubmitRegistration(props) {
@@ -41,35 +45,35 @@ function SubmitRegistration(props) {
         setEmail(e.target.value);
     }
 
-    const [mobile, setMobile] =  useState("");
-    const handleMobileChange = e => {
-        setMobile(e.target.value);
-    }
+    // const [mobile, setMobile] =  useState("");
+    // const handleMobileChange = e => {
+    //     setMobile(e.target.value);
+    // }
 
     const [password, setPassword] =  useState("");
     const handlePasswordChange = e => {
         setPassword(e.target.value);
     }
 
-    const [day, setDay] = useState("");
-    const handleDayChange = e => {
-        setDay(e.target.value);
-    }
+    // const [day, setDay] = useState("");
+    // const handleDayChange = e => {
+    //     setDay(e.target.value);
+    // }
 
-    const [month, setMonth] = useState("");
-    const handleMonthChange = e => {
-        setMonth(e.target.value);
-    }
+    // const [month, setMonth] = useState("");
+    // const handleMonthChange = e => {
+    //     setMonth(e.target.value);
+    // }
 
-    const [year, setYear] = useState("");
-    const handleYearChange = e => {
-        setYear(e.target.value);
-    }
+    // const [year, setYear] = useState("");
+    // const handleYearChange = e => {
+    //     setYear(e.target.value);
+    // }
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.newRegistration(firstName, surname, email, mobile, day, month, year);
-
+        // props.newRegistration(firstName, surname, email, mobile, day, month, year);
+        props.newRegistration(firstName, surname, email);
         // setFirstName = ("");
         // setSurname = ("");
         // setEmail = ("");
@@ -80,24 +84,8 @@ function SubmitRegistration(props) {
         // setYear = ("");
     }
 
-
-//};
-
-
-
-
-//const Registration = () => (
 return(
     <>
-        <Container className="left">
-            <Row>
-                <Col>
-                    <Link to="/">
-                        <Image alt="AppiMeals Logo" className="miniLogo" src={Logo}  /> 
-                    </Link>
-                </Col>
-            </Row>
-        </Container>
 
         <Container>
             <Row>
@@ -131,17 +119,17 @@ return(
 
                         <Form.Control 
                             type="email" 
-                            placeholder="Email Address" 
+                            placeholder="Email Address (your Login)" 
                             onChange = {handleEmailChange}
                             value={email}   
                         /> 
 
-                        <Form.Control 
+                        {/* <Form.Control 
                             ype="text" 
                             placeholder="Mobile Number" 
                             onChange = {handleMobileChange}
                             value={mobile}   
-                        /> 
+                        />  */}
 
                         <Form.Control 
                             type="password" 
@@ -150,7 +138,7 @@ return(
                             value={password}   
                         /> 
                 
-                    <Form.Row>
+                    {/* <Form.Row>
                         <Col>
                             <Form.Control
                                 as="select"
@@ -304,8 +292,8 @@ return(
                                 <option value="1930">1930</option>
                             </Form.Control>
                         </Col>
-                    </Form.Row>
-
+                    </Form.Row> */}
+                    <p>&nbsp;</p>
                     <Button 
                         variant="primary" 
                         type="submit"
@@ -315,8 +303,7 @@ return(
                     </Button>
             </Form.Group>
         </Form>
-
     </>
-);
+    );
 }
 export default SubmitRegistration;
