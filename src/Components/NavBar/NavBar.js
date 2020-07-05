@@ -1,5 +1,13 @@
+/* ToDo
+
+Link search box to Spoonacular API
+
+*/
+
 import React from 'react';
 import {Navbar, Nav, FormControl, Button, Form} from 'react-bootstrap';
+import Logo from '../../Images/logo5-200x200.png';
+import { Link } from 'react-router-dom';
 
 
  const NavBar = () => {
@@ -7,9 +15,18 @@ import {Navbar, Nav, FormControl, Button, Form} from 'react-bootstrap';
     <>
     <header>
         <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Link to="/">
+
+                <img
+                    src={Logo}
+                    width="50"
+                    height="50"
+                    className="d-inline-block align-top"
+                    alt="AppiMeals Logo"
+                />
+            </Link>
+
             <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/SignIn">Sign In</Nav.Link>
             </Nav>
             <Form inline>

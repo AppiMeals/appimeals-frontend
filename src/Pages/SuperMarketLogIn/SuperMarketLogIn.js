@@ -1,13 +1,9 @@
 import React from 'react';
-import {  } from 'react-bootstrap';
+//import { Form, Button, Col} from 'react-bootstrap';
 
 import './SuperMarketLogIn.css';
 
 import SuperMarketLogInPayment from '../../Components/SuperMarketLogInPayment/SuperMarketLogInPayment';
-
-
-
-
 
 const SuperMarketLogIn = () => {
 

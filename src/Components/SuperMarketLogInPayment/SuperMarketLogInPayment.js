@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, Button, ListGroup, Form, Col } from 'react-bootstrap';
-
+//import { Card, Button, ListGroup, Form, Col } from 'react-bootstrap';
+import { Button, Form, Col } from 'react-bootstrap';
 import '../SuperMarketLogInPayment/SuperMarketLogInPayment.css';
 
 
