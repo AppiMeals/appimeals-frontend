@@ -10,12 +10,9 @@ import Registration from './Pages/Registration/Registration';
 import SignInPage from './Pages/SignInPage/SignInPage';
 import MyMealShop from './Pages/MyMealShop/MyMealShop';
 import SuperMarketLogIn from './Pages/SuperMarketLogIn/SuperMarketLogIn';
-<<<<<<< HEAD
+
 import MyMealChoices from './Pages/MyMealChoices/MyMealChoices';
 
-
-=======
->>>>>>> 62ea260a170d06b70424dc9743dd6cd8aff106f4
 import LoginExample from './Pages/LoginExample/LoginExample';
 
 import NavBar from './Components/NavBar/NavBar';
