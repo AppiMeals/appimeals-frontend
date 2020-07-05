@@ -10,7 +10,7 @@ const RecipeCard = (props) => {
             <Card.Body>
 
                 <Card.Title>Card Title</Card.Title>
-                <Card.Text> 
+                <Card.Text></Card.Text> 
                   
 
                 <Card.Title>{props.title}</Card.Title>
@@ -25,6 +25,10 @@ const RecipeCard = (props) => {
             </Card.Body>
         </Card>
     </>
-    )};
+    );
+
+    }
+
+    
 
 export default RecipeCard;
