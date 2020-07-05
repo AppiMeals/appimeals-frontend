@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button, ListGroup } from 'react-bootstrap';
-import Logo from '../../Images/logo5-200x200.png';
+//import Logo from '../../Images/logo5-200x200.png';
 
 import '../ShoppingBasket/ShoppingBasket.css';
 

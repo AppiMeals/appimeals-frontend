@@ -17,11 +17,8 @@ import LoginExample from './Pages/LoginExample/LoginExample';
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
 
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 
 class App extends Component {
   render() {
@@ -44,7 +41,5 @@ class App extends Component {
     );
   }
 }
-
-
 
 export default App;
