@@ -27,7 +27,6 @@ import { Link } from 'react-router-dom';
             </Link>
 
             <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/SignIn">Sign In</Nav.Link>
             </Nav>
             <Form inline>
