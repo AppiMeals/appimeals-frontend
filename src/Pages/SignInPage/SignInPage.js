@@ -18,6 +18,9 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 
+
+import './SignInPage.css';
+
 function SignIn(props) {
 
     const [userName, setUserName] = useState("");
@@ -40,7 +43,10 @@ function SignIn(props) {
 
     return (
     <>
+    <p>&nbsp;</p>
         <Container>
+            <Form>
+            <Form.Group>
             <Row>
                 <Col>
                     <h2>Sign In</h2>
@@ -48,79 +54,62 @@ function SignIn(props) {
             </Row>
             <Row>
                 <Col>
-                <Form>
-                    <Form.Group>
-                        <Form.Control 
-                            type="email" 
-                            placeholder="Email Address" 
-                            onChange = {handleUserNameChange}
-                            value={userName} 
-                        />
+                    <Form.Control 
+                        type="email" 
+                        placeholder="Email Address" 
+                        onChange = {handleUserNameChange}
+                        value={userName} 
+                    />
+                    <Form.Control 
+                        type="password" 
+                        placeholder="Password" 
+                        onChange = {handlePasswordChange}
+                        value={password} 
+                    />
+                    <Form.Check 
+                        type="checkbox" 
+                        label="Remember Me" 
+                        onChange = {handleClick}
+                        checked={checked} 
+                    />
+                    <Link to="/forgot-password">Forgot Your Password?</Link>
+                    <br/>
 
-                        <Form.Control 
-                            type="password" 
-                            placeholder="Password" 
-                            onChange = {handlePasswordChange}
-                            value={password} 
-                        />
-
-                        <Form.Check 
-                            type="checkbox" 
-                            label="Remember Me" 
-                            onChange = {handleClick}
-                            checked={checked} 
-                        />
-
-                        <Link to="/forgot-password">Forgot Your Password?</Link>
-
-                        <br/>
-
-                        <Button 
-                            variant="primary" 
-                            type="submit"
-                            onClick = {handleSubmit}
-                        >
-                            Sign In
-                        </Button>
-                    </Form.Group>
-
-                </Form>
+                    <Button 
+                        variant="primary" 
+                        type="submit"
+                        onClick = {handleSubmit}
+                    >
+                        Sign In
+                    </Button>
                 </Col>
             </Row>
+            <p>&nbsp;</p>
+            <Row>
+                <Col>
+                    <button className="btn-facebook">
+                        <i className="fa fa-facebook"></i>
+                         | Sign In with Facebook
+                    </button>
+
+                </Col>
+                <Col>
+                    <button className="btn-twitter">
+                        <i className="fa fa-twitter"></i>
+                         | Sign In with Twitter
+                    </button>
+                </Col>
+                <Col>
+                    <button className="btn-google">
+                        <i className="fa fa-google"></i>
+                         | Sign In with Google
+                    </button>
+                </Col>
+            </Row>
+            </Form.Group>
+            </Form>
         </Container>
 
-        <p>&nbsp;</p>
-
-
-        {console.log(userName)}
-        {console.log(password)}
-        {console.log(checked)}
-
-        <Container>
-            <Row>
-
-                <Col>
-                    -- OR --
-                </Col>
-
-            </Row>
-            <Row>
-                <Col>
-                    Sign in with...
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    Facebook
-                </Col>
-                <Col>
-                    Twitter
-                </Col>
-                <Col>
-                    Google
-                </Col>
-            </Row>
-        </Container>
 
     </>
 
