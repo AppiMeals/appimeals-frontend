@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
@@ -10,7 +11,6 @@ import Registration from './Pages/Registration/Registration';
 import SignInPage from './Pages/SignInPage/SignInPage';
 import MyMealShop from './Pages/MyMealShop/MyMealShop';
 import SuperMarketLogIn from './Pages/SuperMarketLogIn/SuperMarketLogIn';
-
 import MyMealChoices from './Pages/MyMealChoices/MyMealChoices';
 
 import LoginExample from './Pages/LoginExample/LoginExample';
