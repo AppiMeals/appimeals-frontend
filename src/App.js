@@ -10,9 +10,12 @@ import Registration from './Pages/Registration/Registration';
 import SignInPage from './Pages/SignInPage/SignInPage';
 import MyMealShop from './Pages/MyMealShop/MyMealShop';
 import SuperMarketLogIn from './Pages/SuperMarketLogIn/SuperMarketLogIn';
+<<<<<<< HEAD
 import MyMealChoices from './Pages/MyMealChoices/MyMealChoices';
 
 
+=======
+>>>>>>> 62ea260a170d06b70424dc9743dd6cd8aff106f4
 import LoginExample from './Pages/LoginExample/LoginExample';
 
 import NavBar from './Components/NavBar/NavBar';
@@ -22,6 +25,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
+
   render() {
     return (
       <Router>
@@ -31,7 +35,7 @@ class App extends Component {
             <Route path="/" component={HomePage} exact />
             <Route path="/SignIn" component={SignInPage} exact />
             <Route path="/SignUp" component={Registration} exact />
-            <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
+            <Route path="/browse-recipes" component={BrowseRecipes} exact />
             <Route path="/LoginExample" component={LoginExample} exact />
             <Route path="/MyMealShop" component={MyMealShop} exact />
             <Route path="/SuperMarketLogIn" component={SuperMarketLogIn} exact />
