@@ -13,7 +13,7 @@ import SuperMarketTotals from '../../Components/SuperMarketTotals/SuperMarketTot
 //import { Link } from 'react-router-dom';
 
 
-const MyMealShop = () => {
+const MyMealShop = (props) => {
     return (
         <> 
             <div className="main__section__MyMealShop container">

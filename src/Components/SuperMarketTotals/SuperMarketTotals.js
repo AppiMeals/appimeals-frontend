@@ -13,7 +13,12 @@ import '../SuperMarketTotals/SuperMarketTotals.css';
 
 
 
-const SuperMarketTotals = () => {
+const SuperMarketTotals = (props) => {
+    
+
+
+
+
     return (
         <>
             <div className="form-inline">

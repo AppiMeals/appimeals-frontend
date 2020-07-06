@@ -8,6 +8,11 @@ import '../TotalPrice/TotalPrice.css';
 
 function TotalPrice(props) {
 
+    
+
+   
+
+
   
 
 
@@ -21,7 +26,7 @@ function TotalPrice(props) {
                     <Card.Title>Total Price</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">inc VAT</Card.Subtitle>
                     <Card.Text>
-                        {props.price}
+                      
 
                     </Card.Text>
                     <Card.Link href="#">Card Link</Card.Link>
