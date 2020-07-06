@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+
+import React, { Component, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -10,12 +11,15 @@ import Registration from './Pages/Registration/Registration';
 import SignInPage from './Pages/SignInPage/SignInPage';
 import MyMealShop from './Pages/MyMealShop/MyMealShop';
 import SuperMarketLogIn from './Pages/SuperMarketLogIn/SuperMarketLogIn';
+import MyMealChoices from './Pages/MyMealChoices/MyMealChoices';
+
 import LoginExample from './Pages/LoginExample/LoginExample';
 
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
 
 import './App.css';
+
 
 class App extends Component {
 
@@ -32,6 +36,7 @@ class App extends Component {
             <Route path="/LoginExample" component={LoginExample} exact />
             <Route path="/MyMealShop" component={MyMealShop} exact />
             <Route path="/SuperMarketLogIn" component={SuperMarketLogIn} exact />
+            <Route path="/MyMealChoices" component={MyMealChoices} exact />
           </div>
           <Footer /> 
         </div>
