@@ -1,14 +1,5 @@
-/*
-ToDo:
-
-1.  Add "Sign in With..." buttons
-2.  Implement OAUTH in Facebook/Twitter/Google or decide
-        to leave these as placeholders
-        === https://www.codeproject.com/Articles/5258733/Login-With-Google-Using-ReactJS
-
-*/
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -18,10 +9,31 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 
-
 import './SignInPage.css';
 
 function SignIn(props) {
+
+    const [signIn, setSignIn] = useState([]);
+    const [loading, setLoading ] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        axios
+        //.get(`https://q6to3w78jj.execute-api.eu-west-1.amazonaws.com/dev/tasks?user_id=${Cookies.get("user_id")}`)
+        .get(` https://uuwrezvfy7.execute-api.eu-west-2.amazonaws.com/dev/user-registration/users?email=${userName}&password=${password}`)
+        .then(response => {
+            // request is successful, run this
+            console.log(response.data);
+            setSignIn(response.data.users);
+            setLoading(false);
+          })
+        .catch(
+          (error) => {
+            //request is given an error, run this
+            console.log('Error Signing In', error);
+            setLoading(false);
+          });
+      }, []);
 
     const [userName, setUserName] = useState("");
     const handleUserNameChange = e => {
@@ -109,6 +121,12 @@ function SignIn(props) {
             </Form.Group>
             </Form>
         </Container>
+
+        {console.log("userName " + userName)}
+        {console.log("password " + password)}
+        {console.log("checked " + checked)}
+        {console.log("signIn " + signIn)}
+        {console.log("props " + props)}
 
 
     </>
