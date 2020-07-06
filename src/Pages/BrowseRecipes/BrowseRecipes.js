@@ -11,7 +11,6 @@ import {
 
 const BrowseRecipes = () => {
 
-    //const API_KEY = "ee2a325e66bd44bd89f14ee9afb794dd";
 
     const [recipes, setRecipes] = useState([]);
     const [search, setSearch] = useState('');
@@ -23,7 +22,7 @@ const BrowseRecipes = () => {
 
         //GET RECIPES
         axios
-            .get(`https://api.edamam.com/search?q=${query}&app_id=fce15b25&app_key=8b32dc22c438268e5fc874e29967d9fa&from=0&to=10&calories=591-722`)
+            .get(`https://uuwrezvfy7.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes`)
             .then(
 
                 response => {
