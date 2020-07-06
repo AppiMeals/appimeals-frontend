@@ -12,8 +12,7 @@ import { CardGroup, Card} from 'react-bootstrap';
     <Card.Body>
       <Card.Title>Monday</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
+        Some example text
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -38,9 +37,7 @@ import { CardGroup, Card} from 'react-bootstrap';
     <Card.Body>
       <Card.Title>Wednesday</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
+      Some example text
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -52,9 +49,7 @@ import { CardGroup, Card} from 'react-bootstrap';
     <Card.Body>
       <Card.Title>Thursday</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
+      Some example text
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -66,9 +61,7 @@ import { CardGroup, Card} from 'react-bootstrap';
     <Card.Body>
       <Card.Title>Friday</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
+      Some example text
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -80,9 +73,7 @@ import { CardGroup, Card} from 'react-bootstrap';
     <Card.Body>
       <Card.Title>Saturday</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
+      Some example text
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -94,9 +85,7 @@ import { CardGroup, Card} from 'react-bootstrap';
     <Card.Body>
       <Card.Title>Sunday</Card.Title>
       <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
+      Some example text
       </Card.Text>
     </Card.Body>
     <Card.Footer>
