@@ -1,0 +1,7 @@
+span {
+    margin-bottom: 1.5rem;
+}
+
+.card-columns {
+    column-count: 4;
+}

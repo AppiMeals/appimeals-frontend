@@ -1,15 +1,13 @@
 import React from 'react';
-import {  Form, Button, Col} from 'react-bootstrap';
+//import { Form, Button, Col} from 'react-bootstrap';
 
-import './SuperMarketLogin.css';
+import './SuperMarketLogIn.css';
 
 import SuperMarketLogInPayment from '../../Components/SuperMarketLogInPayment/SuperMarketLogInPayment';
 
-
-
-
-
 const SuperMarketLogIn = () => {
+
+   
     return (
         <>
             <div className="main__section__SuperMarketLogIn container">

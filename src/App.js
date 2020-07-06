@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+
+import React, { Component, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,19 +12,18 @@ import SignInPage from './Pages/SignInPage/SignInPage';
 import MyMealShop from './Pages/MyMealShop/MyMealShop';
 import SuperMarketLogIn from './Pages/SuperMarketLogIn/SuperMarketLogIn';
 import MyMealsHub from './Pages/MyMealsHub/MyMealsHub';
+import MyMealChoices from './Pages/MyMealChoices/MyMealChoices';
 
 import LoginExample from './Pages/LoginExample/LoginExample';
 
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
 
-
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 
 class App extends Component {
+
   render() {
     return (
       <Router>
@@ -33,11 +33,12 @@ class App extends Component {
             <Route path="/" component={HomePage} exact />
             <Route path="/SignIn" component={SignInPage} exact />
             <Route path="/SignUp" component={Registration} exact />
-            <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
+            <Route path="/browse-recipes" component={BrowseRecipes} exact />
             <Route path="/LoginExample" component={LoginExample} exact />
             <Route path="/MyMealShop" component={MyMealShop} exact />
             <Route path="/SuperMarketLogIn" component={SuperMarketLogIn} exact />
             <Route path="/MyMealsHub" component={MyMealsHub} exact />
+            <Route path="/MyMealChoices" component={MyMealChoices} exact />
           </div>
           <Footer /> 
         </div>
@@ -45,7 +46,5 @@ class App extends Component {
     );
   }
 }
-
-
 
 export default App;

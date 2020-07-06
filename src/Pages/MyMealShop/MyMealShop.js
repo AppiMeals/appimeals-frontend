@@ -1,19 +1,19 @@
 import React from 'react';
-import { CardDeck} from 'react-bootstrap';
+//import { CardDeck} from 'react-bootstrap';
 
 
 import '../MyMealShop/MyMealShop.css';
 import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
 import SuperMarketTotals from '../../Components/SuperMarketTotals/SuperMarketTotals';
-import Logo from '../../Images/logo5-200x200.png';
-import Image from 'react-bootstrap/Image';
+//import Logo from '../../Images/logo5-200x200.png';
+//import Image from 'react-bootstrap/Image';
 
 
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 
-const MyMealShop = () => {
+const MyMealShop = (props) => {
     return (
         <> 
             <div className="main__section__MyMealShop container">
