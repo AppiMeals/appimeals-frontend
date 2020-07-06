@@ -11,6 +11,7 @@ import Registration from './Pages/Registration/Registration';
 import SignInPage from './Pages/SignInPage/SignInPage';
 import MyMealShop from './Pages/MyMealShop/MyMealShop';
 import SuperMarketLogIn from './Pages/SuperMarketLogIn/SuperMarketLogIn';
+import MyMealsHub from './Pages/MyMealsHub/MyMealsHub';
 import MyMealChoices from './Pages/MyMealChoices/MyMealChoices';
 
 import LoginExample from './Pages/LoginExample/LoginExample';
@@ -36,6 +37,7 @@ class App extends Component {
             <Route path="/LoginExample" component={LoginExample} exact />
             <Route path="/MyMealShop" component={MyMealShop} exact />
             <Route path="/SuperMarketLogIn" component={SuperMarketLogIn} exact />
+            <Route path="/MyMealsHub" component={MyMealsHub} exact />
             <Route path="/MyMealChoices" component={MyMealChoices} exact />
           </div>
           <Footer /> 
