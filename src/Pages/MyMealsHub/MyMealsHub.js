@@ -1,6 +1,6 @@
 import React from 'react';
 import '../MyMealsHub/MyMealsHub.css';
-import UpcomingMealsCard from '../../Components/UpcomingMealsCard/UpcomingMealsCard';
+import UpcomingMealsCard from '../../Components/UpComingMealsCard/UpcomingMealsCard';
 import Logo from '../../Images/logo5-200x200.png';
 import Image from 'react-bootstrap/Image';
 import { Link } from 'react-router-dom';
