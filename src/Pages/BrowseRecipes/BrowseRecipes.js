@@ -4,15 +4,14 @@ import axios from 'axios';
 import '../BrowseRecipes/BrowseRecipes.css';
 import RecipeCard from '../../Components/RecipeCard/RecipeCard';
 import {
-    CardColumns,
-    InputGroup,
+    CardDeck,
     Button,
-    FormControl
+    Form
 } from 'react-bootstrap';
 
 const BrowseRecipes = () => {
 
-    const API_KEY = "ee2a325e66bd44bd89f14ee9afb794dd";
+    //const API_KEY = "ee2a325e66bd44bd89f14ee9afb794dd";
 
     const [recipes, setRecipes] = useState([]);
     const [search, setSearch] = useState('');
@@ -24,11 +23,11 @@ const BrowseRecipes = () => {
 
         //GET RECIPES
         axios
-            .get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&addRecipeInformation=true&fillIngredients=true&number=10&apiKey=${API_KEY}`)
+            .get(`https://api.edamam.com/search?q=${query}&app_id=fce15b25&app_key=8b32dc22c438268e5fc874e29967d9fa&from=0&to=10&calories=591-722`)
             .then(
 
                 response => {
-                    setRecipes(response.data.results)
+                    setRecipes(response.data.hits)
                 }
             )
             .catch(
@@ -37,7 +36,7 @@ const BrowseRecipes = () => {
                 }
             )
     }, [query]);
-
+  
     //Update the string in the search bar onChange
     const updateSearch = e => {
         setSearch(e.target.value);
@@ -47,44 +46,46 @@ const BrowseRecipes = () => {
     const getSearch = e => {
         e.preventDefault();
         setQuery(search);
+        setSearch('');
     }
 
     return (
         <>
-            <div className="main__section">
+            <div className="main-section">
 
                 <h1>Browse Recipes</h1>
 
-                <InputGroup className="mb-3">
-                    <FormControl
-                        placeholder="Recipe"
-                        aria-label="Search"
-                        aria-describedby="recipe-seach-bar"
+                <form className="search-form">
+                    <Form.Control
+                        className="search-bar"
+                        type="text"
                         onChange={updateSearch}
                         value={search}
                     />
-                    <Button 
-                    type="submit"
-                    variant="outline-secondary" 
-                    onClick={getSearch}
-                    as={InputGroup.Append}
+                    <Button
+                        className="search-button"
+                        type="submit"
+                        variant="primary"
+                        onClick={getSearch}
                     >
                         Search
                     </Button>
-                </InputGroup>
+                </form>
 
-                <CardColumns className="card__container">
+                <CardDeck className="recipe-container">
                     {recipes.map(recipe => (
-                    <RecipeCard
-                        key={recipe.id}
-                        title={recipe.title}
-                        image={recipe.image}
-                        calories={recipe.calories}
-                        servings={recipe.servings}
-                        cookingTime={recipe.readyInMinutes}
-                        summary={recipe.summary} />
+                        <RecipeCard
+                            key={recipe.recipe.uri}
+                            id={recipe.recipe.uri}
+                            title={recipe.recipe.label}
+                            image={recipe.recipe.image}
+                            calories={recipe.recipe.calories}
+                            servings={recipe.recipe.yield}
+                            cookingTime={recipe.recipe.totalTime}
+                            url={recipe.recipe.url} />
                     ))}
-                </CardColumns>
+                </CardDeck>
+
             </div>
         </>
     )

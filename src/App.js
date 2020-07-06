@@ -1,12 +1,11 @@
-
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
 //import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { Amplify } from 'aws-amplify';
-import config from './config';
+// import { Amplify } from 'aws-amplify';
+// import config from './config';
 //import { AppContext } from "./libs/contextLib";
 //import {LinkContainer, NavItem} from 'react-router-bootstrap';
 
