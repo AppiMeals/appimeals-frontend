@@ -6,6 +6,8 @@ import './MyMealChoices.css';
 import MealChoices from '../../Components/MealChoices/MealChoices';
 import TotalPrice from '../../Components/TotalPrice/TotalPrice';
 
+import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
+
 
 const MyMealChoices = (props) => {
     const [ingredients, setIngredients] = useState([
@@ -20,6 +22,8 @@ const MyMealChoices = (props) => {
             ingredients: { ingredientName: "tofu", ingredientId: 100 }
         }
     ])
+   
+
 
   
 
@@ -35,15 +39,9 @@ const MyMealChoices = (props) => {
                         name={ing.ingredientName}
                         price={ing.price} />
                 })}
+                
 
                 <TotalPrice/>
-
-             
-
-
-
-
-
             </div>
         </>
     )
