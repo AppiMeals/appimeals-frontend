@@ -1,13 +1,25 @@
-.main__section {
-    margin: 2rem;
+.main-section {
+    margin: 1.5rem;
 }
 
-h1 {
-    padding-bottom: 1.5rem;
+.recipe-container {
+    justify-content: center;
+
 }
 
-/* need media query to set the column count */
+.search-form {
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
 
-.card__container {
-    column-count: 4;
+
+.form-control {
+    max-height: 10vh;
+    max-width: 50vw;
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
 }
