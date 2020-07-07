@@ -48,6 +48,25 @@ const BrowseRecipes = () => {
         setSearch('');
     }
 
+    //Add Recipe to Fav's
+    const addRecipe = (id) => {
+        //Create recipe object where I want to save just the recipe Id against the user
+        const newRecipe = {
+            "recipe_id": id,
+            "user_dbid": 2
+        }
+
+        axios
+            .post('https://uuwrezvfy7.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes/', newRecipe)
+            .then(response => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log("Error adding a task", error);
+            });
+    }
+
+
     return (
         <>
             <div className="main-section">
@@ -74,6 +93,7 @@ const BrowseRecipes = () => {
                 <CardDeck className="recipe-container">
                     {recipes.map(recipe => (
                         <RecipeCard
+                            addRecipe={addRecipe}
                             key={recipe.recipe.uri}
                             id={recipe.recipe.uri}
                             title={recipe.recipe.label}
