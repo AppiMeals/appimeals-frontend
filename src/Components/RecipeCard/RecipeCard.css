@@ -7,6 +7,10 @@
     margin-bottom: 2rem;
 }
 
+.button-group {
+    display: flex;
+}
+
 @media only screen and (max-width: 650px) {
     .text-center {
         width: 100%;
