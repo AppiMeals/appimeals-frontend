@@ -22,7 +22,7 @@ const BrowseRecipes = () => {
 
         //GET RECIPES
         axios
-            .get(`https://uuwrezvfy7.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes`)
+            .get(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes`)
             .then(
 
                 response => {
