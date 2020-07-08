@@ -1,47 +1,96 @@
-import React, { Component, useState } from 'react';
-
-import { CardDeck , Card} from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import './MyMealChoices.css';
 import MealChoices from '../../Components/MealChoices/MealChoices';
-import TotalPrice from '../../Components/TotalPrice/TotalPrice';
 
+import TotalPrice from '../../Components/TotalPrice/TotalPrice';
 import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
+
+import {
+    CardDeck,
+    Button,
+    Card,
+    Form
+} from 'react-bootstrap';
+
+
 
 
 const MyMealChoices = (props) => {
-    const [ingredients, setIngredients] = useState([
-        { ingredientName: "tofu", price: 2, ingredientId: 1 },
-        { ingredientName: "rice", price: 4, ingredientId: 21 },
-        { ingredientName: "Food", price: 14, ingredientId: 21 }
-    ]);
-
-    const [recipeMenu, setRecipe] = useState([
-        {
-            recipeName: "tofu fritter",
-            ingredients: { ingredientName: "tofu", ingredientId: 100 }
-        }
-    ])
+    const [recipes, setRecipes] = useState([]);
+    const [search, setSearch] = useState('');
+    const [query, setQuery] = useState('');
    
 
+    //Use Effect should update the with the 
 
-  
+    useEffect(() => {
 
+        //GET RECIPES
+        axios
+            .get(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes`)
+            .then(
 
+                response => {
+                    setRecipes(response.data.hits)
+                }
+            )
+            .catch(
+                (error) => {
+                    console.log('Error fetching data', error)
+                }
+            )
+    }, [query]);
+     //Update the string in the search bar onChange
+     const updateSearch = e => {
+        setSearch(e.target.value);
+    }
+
+    //Get the value of the search bar and pass it to the query
+    const getSearch = e => {
+        e.preventDefault();
+        setQuery(search);
+        setSearch('');
+    }
+
+    function deleteMeal (id) {
+        const deleteMeals = recipes.filter(recipe => recipe.id !== id);
+        setRecipes(deleteMeals);
+    }
+   
     return (
         <>
             <div className="main__section__MyMealChoices container">
                 <h1>My Meal Choices</h1>
-                {ingredients.map(ing => {
-                    return <MealChoices
-                        key={ing.ingredientId}
-                        id={ing.ingredientId}
-                        name={ing.ingredientName}
-                        price={ing.price} />
-                })}
+         
+
+
+                <CardDeck className="recipe-container">
+                    {recipes.map(recipe => (
+                        <MealChoices
+                            key={recipe.recipe.uri}
+                            id={recipe.recipe.uri}
+                            title={recipe.recipe.label}
+                            image={recipe.recipe.image}
+                            calories={recipe.recipe.calories}
+                            servings={recipe.recipe.yield}
+                            cookingTime={recipe.recipe.totalTime}
+                            url={recipe.recipe.url} 
+                            deleteRecipe = {deleteMeal}
+                            weight={recipe.recipe.ingredients}/>
+                            
+                    ))}
                 
 
-                <TotalPrice/>
+                   
+                </CardDeck>
+
+
+                
+         
+                    
+          
             </div>
         </>
     )
