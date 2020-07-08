@@ -10,30 +10,37 @@ import { Link } from 'react-router-dom';
 const MyMealsHub = () => {
     return (
         <>
-            <div className="main__section__MyMealsHub container">
+            <div className="MainSectionMyMealsHubContainer">
                 <h1>My Meals Hub</h1>
-            </div>
 
-            <div>
-                <h3> My Upcoming Meals</h3>
-                <div class="row">
-                    <div class="box1 col-12">
-                        <UpcomingMealsCard />
-                    </div>
-                </div>
+
 
 
                 <div>
-                    <h3>Browse Meals by Catagory</h3>
-                    <div class="row">
-                        <div class="box1 col-12">
-                            <BrowseCatagoryCard/>
+
+                    <div>
+                        <h3> My Upcoming Meals</h3>
+                        <div class="row">
+                            <div class="box1 col-12">
+                                <UpcomingMealsCard />
+                            </div>
                         </div>
+                    </div>
 
 
+                    <div>
+                        <div>
+                            <h3>Browse Meals by Catagory</h3>
+                            <div class="row">
+                                <div class="box1 col-12">
+                                    <BrowseCatagoryCard />
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
+
             </div>
         </>
 
