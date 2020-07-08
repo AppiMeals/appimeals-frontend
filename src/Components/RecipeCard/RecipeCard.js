@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Button, CardGroup, Dropdown } from 'react-bootstrap';
 //import parse from 'html-react-parser';
 
@@ -7,8 +7,14 @@ import './RecipeCard.css';
 
 const RecipeCard = (props) => {
 
-    const handleRecipeAddClick = () => {
+    const [day, setDay] = useState('');
+
+    const handleClick = () => {
         props.addRecipe(props.id);
+    }
+
+    const handleSelect = (e) => {
+        setDay(e);
     }
 
     return (
@@ -30,20 +36,21 @@ const RecipeCard = (props) => {
                         <Card.Link href={props.url} target={"_blank"} >View Recipe</Card.Link>
                         <br />
                         <span className="button-group">
-                        <Button onClick={handleRecipeAddClick} variant="primary">Add to myMeals</Button>
-                        <Dropdown>
+
+                        <Button onClick={handleClick} variant="primary">Add to myMeals</Button>
+                        <Dropdown onSelect={handleSelect}>
                             <Dropdown.Toggle variant="primary" id="dropdown-basic">
                                 Select Day
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Monday</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Tuesday</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Wednsday</Dropdown.Item>
-                                <Dropdown.Item href="#/action-4">Thursday</Dropdown.Item>
-                                <Dropdown.Item href="#/action-5">Friday</Dropdown.Item>
-                                <Dropdown.Item href="#/action-6">Saturday</Dropdown.Item>
-                                <Dropdown.Item href="#/action-7">Sunday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Monday" >Monday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Tuesday" >Tuesday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Wednsday" >Wednsday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Thursday" >Thursday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Friday" >Friday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Saturday" >Saturday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Sunday" >Sunday</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                         </span>

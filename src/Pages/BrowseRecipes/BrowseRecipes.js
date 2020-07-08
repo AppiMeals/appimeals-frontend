@@ -19,23 +19,25 @@ const BrowseRecipes = () => {
     //Use Effect should update the with the 
 
     useEffect(() => {
-
         //GET RECIPES
         axios
-            .get(`https://uuwrezvfy7.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes`)
-            .then(
-
-                response => {
-                    setRecipes(response.data.hits)
+            .get(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes`,
+            {
+                params: {
+                    input: query
                 }
-            )
+            })
+            .then(response => {
+                    setRecipes(response.data.hits)
+                })
             .catch(
                 (error) => {
                     console.log('Error fetching data', error)
-                }
-            )
+                })
     }, [query]);
   
+
+    
     //Update the string in the search bar onChange
     const updateSearch = e => {
         setSearch(e.target.value);
@@ -50,22 +52,26 @@ const BrowseRecipes = () => {
 
     //Add Recipe to Fav's
     const addRecipe = (id) => {
-        //Create recipe object where I want to save just the recipe Id against the user
+        //Create recipe object
         const newRecipe = {
             "recipe_id": id,
-            "user_dbid": 2
+            "user_dbid": 2,
+            "favourite": 1,
+            "day": "Null"
         }
 
+        console.log("I am here");
+
         axios
-            .post('https://uuwrezvfy7.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes/', newRecipe)
+            .post('https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes', newRecipe)
             .then(response => {
                 console.log(response);
             })
             .catch((error) => {
                 console.log("Error adding a task", error);
             });
+    
     }
-
 
     return (
         <>
@@ -101,7 +107,8 @@ const BrowseRecipes = () => {
                             calories={recipe.recipe.calories}
                             servings={recipe.recipe.yield}
                             cookingTime={recipe.recipe.totalTime}
-                            url={recipe.recipe.url} />
+                            url={recipe.recipe.url}                            
+                            />
                     ))}
                 </CardDeck>
 
