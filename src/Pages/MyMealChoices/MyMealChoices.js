@@ -15,12 +15,28 @@ import {
 } from 'react-bootstrap';
 
 
-
-
 const MyMealChoices = (props) => {
     const [recipes, setRecipes] = useState([]);
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('');
+
+    //Use Effect should update the with the 
+    useEffect(() => {
+        //GET RECIPES
+        axios
+            .get(`https://api.edamam.com/search?q=chicken&app_id=7accd594&app_key=2195a4b3a84812fdec32734983392e27&from=0&to=3&calories=591-1000`)
+            .then(
+                response => {
+                    setRecipes(response.data.hits)
+                }
+            )
+            .catch(
+                (error) => {
+                    console.log('Error fetching data', error)
+                }
+            )
+    }, [query]);
+
 
 
     return (
