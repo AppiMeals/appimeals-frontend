@@ -1,12 +1,20 @@
-import React, { Component, useState } from 'react';
-
-import { CardDeck , Card} from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import './MyMealChoices.css';
 import MealChoices from '../../Components/MealChoices/MealChoices';
 import TotalPrice from '../../Components/TotalPrice/TotalPrice';
-
 import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
+
+import {
+    CardDeck,
+    Button,
+    Card,
+    Form,
+    Accordion
+    } from 'react-bootstrap';
+
+
 
 
 const MyMealChoices = (props) => {
