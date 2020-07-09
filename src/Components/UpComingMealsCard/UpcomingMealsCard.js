@@ -1,8 +1,8 @@
 import React from 'react';
-import { CardGroup, Card, Button } from 'react-bootstrap';
+import { CardGroup, Card, Button, Image } from 'react-bootstrap';
 
 
-const MyUpcomingMealsCard = () => {
+const MyUpcomingMealsCard = (props) => {
   return (
     <>
       <header>
@@ -20,7 +20,7 @@ const MyUpcomingMealsCard = () => {
             </Card.Footer>
           </Card>
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Image className="imageT" src={props.image}  />
             <Card.Body>
               <Card.Title>Tuesday</Card.Title>
               <Card.Text>
