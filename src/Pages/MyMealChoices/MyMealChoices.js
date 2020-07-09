@@ -10,22 +10,7 @@ import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
 
 
 const MyMealChoices = (props) => {
-    const [ingredients, setIngredients] = useState([
-        { ingredientName: "tofu", price: 2, ingredientId: 1 },
-        { ingredientName: "rice", price: 4, ingredientId: 21 },
-        { ingredientName: "Food", price: 14, ingredientId: 21 }
-    ]);
-
-    const [recipeMenu, setRecipe] = useState([
-        {
-            recipeName: "tofu fritter",
-            ingredients: { ingredientName: "tofu", ingredientId: 100 }
-        }
-    ])
-   
-
-
-  
+    const [recipes, setRecipes] = useState([]);
 
 
     return (
