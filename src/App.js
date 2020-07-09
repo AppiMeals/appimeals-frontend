@@ -56,6 +56,7 @@ class App extends Component {
             <Route path="/MyMealChoices" component={MyMealChoices} exact />
           </div>
           <Footer />
+        </div>
         </Router>
       </>
     );
