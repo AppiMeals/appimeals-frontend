@@ -12,13 +12,15 @@ import {
     Card,
     Form,
     Accordion
-    } from 'react-bootstrap';
+} from 'react-bootstrap';
 
 
 
 
 const MyMealChoices = (props) => {
     const [recipes, setRecipes] = useState([]);
+    const [search, setSearch] = useState('');
+    const [query, setQuery] = useState('');
 
 
     return (
@@ -32,9 +34,9 @@ const MyMealChoices = (props) => {
                         name={ing.ingredientName}
                         price={ing.price} />
                 })}
-                
 
-                <TotalPrice/>
+
+                <TotalPrice />
             </div>
         </>
     )
