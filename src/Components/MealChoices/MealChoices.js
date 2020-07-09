@@ -9,7 +9,8 @@ import {
     Button,
     CardDeck,
     Container,
-    Image
+    Image,
+    Accordion
 } from 'react-bootstrap';
 
 
@@ -35,6 +36,19 @@ function MealChoices(props) {
     const handleMinusChange = () => {
         setText(minus(text))
     }
+
+    let nutFat = Object.values(props.nutrients.FAT);
+    let secondArr = nutFat[1].toFixed(2);
+    let nutChol = Object.values(props.nutrients.CHOLE);
+    let secondArrChol = nutChol[1].toFixed(2);
+    let nutSugar = Object.values(props.nutrients.SUGAR);
+    let secondArrSugar = nutSugar[1].toFixed(2);
+    let nutCarbs = Object.values(props.nutrients.CHOCDF);
+    let secondArrCarbs = nutCarbs[1].toFixed(2);
+    let nutFiber = Object.values(props.nutrients.FIBTG);
+    let secondArrFiber = nutFiber[1].toFixed(2);
+    let nutProtein = Object.values(props.nutrients.PROCNT);
+    let secondArrProtein = nutProtein[1].toFixed(2);
 
     return (
         <>
@@ -64,6 +78,33 @@ function MealChoices(props) {
                             )}
                         </Card.Text>
                     </Container>
+
+                    <Accordion>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                    Click me for Nutritonal stuff!
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>
+                                    Per Original Serving: {props.servings}:
+                                    <br />
+                                    {nutFat[0]} {secondArr}{nutFat[2]}
+                                    <br />
+                                    {nutChol[0]} {secondArrChol}{nutChol[2]}
+                                    <br />
+                                    {nutSugar[0]} {secondArrSugar}{nutSugar[2]}
+                                    <br />
+                                    {nutCarbs[0]} {secondArrCarbs}{nutCarbs[2]}
+                                    <br />
+                                    {nutFiber[0]} {secondArrFiber}{nutFiber[2]}
+                                    <br />
+                                    {nutProtein[0]} {secondArrProtein}{nutProtein[2]}
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
 
                 </Card.Body>
             </Card>
