@@ -1,13 +1,19 @@
 import React, { Component, useState } from 'react';
-import { Card, Button, CardDeck } from 'react-bootstrap';
 import Logo from '../../Images/logo5-200x200.png';
 
 
 import '../MealChoices/MealChoices.css';
 
+import { 
+    Card, 
+    Button, 
+    CardDeck 
+} from 'react-bootstrap';
+
 
 function MealChoices(props) {
-    const [text = 1, setText] = useState();
+    const [text = props.servings, setText] = useState();
+
   
 
     const add = (num) => {
