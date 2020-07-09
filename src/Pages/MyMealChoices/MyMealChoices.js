@@ -1,31 +1,26 @@
-import React, { Component, useState } from 'react';
-
-import { CardDeck , Card} from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import './MyMealChoices.css';
 import MealChoices from '../../Components/MealChoices/MealChoices';
 import TotalPrice from '../../Components/TotalPrice/TotalPrice';
-
 import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
+
+import {
+    CardDeck,
+    Button,
+    Card,
+    Form,
+    Accordion
+} from 'react-bootstrap';
+
+
 
 
 const MyMealChoices = (props) => {
-    const [ingredients, setIngredients] = useState([
-        { ingredientName: "tofu", price: 2, ingredientId: 1 },
-        { ingredientName: "rice", price: 4, ingredientId: 21 },
-        { ingredientName: "Food", price: 14, ingredientId: 21 }
-    ]);
-
-    const [recipeMenu, setRecipe] = useState([
-        {
-            recipeName: "tofu fritter",
-            ingredients: { ingredientName: "tofu", ingredientId: 100 }
-        }
-    ])
-   
-
-
-  
+    const [recipes, setRecipes] = useState([]);
+    const [search, setSearch] = useState('');
+    const [query, setQuery] = useState('');
 
 
     return (
@@ -39,9 +34,9 @@ const MyMealChoices = (props) => {
                         name={ing.ingredientName}
                         price={ing.price} />
                 })}
-                
 
-                <TotalPrice/>
+
+                <TotalPrice />
             </div>
         </>
     )

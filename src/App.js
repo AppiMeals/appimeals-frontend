@@ -36,8 +36,8 @@ class App extends Component {
           <NavItem>Login</NavItem>
         </LinkContainer> */}
 
-      <Router>
-        <div className="App">
+        <Router>
+          <div className="App">
           <NavBar />
           <div className="page-body">
             <Route path="/" component={HomePage} exact />
@@ -56,6 +56,7 @@ class App extends Component {
             <Route path="/MyMealChoices" component={MyMealChoices} exact />
           </div>
           <Footer />
+        </div>
         </Router>
       </>
     );
