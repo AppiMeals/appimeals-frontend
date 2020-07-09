@@ -7,7 +7,6 @@ Link search box to Spoonacular API
 import React from 'react';
 import {Navbar, Nav, Button, Image} from 'react-bootstrap';
 import Logo from '../../../src/Images/logo-round_image-text-next.svg';
-import { Link } from 'react-router-dom';
 
 import "../../../src/Components/NavBar/NavBar.css"
 
