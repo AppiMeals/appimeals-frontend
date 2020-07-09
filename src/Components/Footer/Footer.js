@@ -10,59 +10,35 @@ ToDo:
 */
 
 import React from 'react';
-import Logo from '../../Images/logo-round_image-text-next.svg';
-import FBLogo from '../../Images/iconfinder_icon-02_2515845.png';
-import TwitterLogo from '../../Images/iconfinder_icon-03_2515844.png';
+import Logo from '../../Images/logo-round_text.svg';
 import './Footer.css';
 
-import Image from 'react-bootstrap/Image';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import { Image, Container, Row, Col, ListGroup } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 
 
 const Footer = () => (
     <>  
-        <p>&nbsp;</p>
+     <div>
+        <footer className="footer">
+                <Row>
+                    <ListGroup className="footer-elements" horizontal>
+                        <Image className="appiMealsLogo" alt="AppiMeals Logo" src={Logo} />
 
-        <Container>
-            <Row>
-                <Col>
-                <Link to="/">
-                    <Image className="appiMealsLogo" alt="AppiMeals Logo" src={Logo}  />
-                </Link>
-                </Col>
-                <Col className="contact-buttons" xl={4}>
-                    <Button>Contact Us</Button>
-                    &nbsp;
-                    <Button>About Us &amp; FAQ</Button>
-                    &nbsp;
-                    <Button>Blog</Button>
-                </Col>
-            </Row>
-            <Row>
-                <Col sm={4}>
-                    <Image className="logo" alt="Facebook Logo" src={FBLogo} />
+                        <Link className="contact-page" to="">Contact Us</Link>
+                        <Link className="about-page" to="">About Us &amp; FAQ</Link>
+                        <Link className="blog-page" to="">Blog</Link>
+                    </ListGroup>
+                </Row>
 
-                    <Image className="logo" alt="Twitter Logo" src={TwitterLogo}  />
-                </Col>
-                <Col sm={8}>
-                    &nbsp;
-                </Col>
-            </Row>
-        </Container>
-
-        <Container>
-            <Row>
-                <Col>
-                    &copy; 2020 AppiMeals
-                </Col>
-            </Row>
-        </Container>
-
+                <Row>
+                    <Col className="copyright-text">
+                        Copyright 2020 &copy; APPIMEALS
+                    </Col>
+                </Row>gis
+        </footer>
+        </div>
     </>
 );
 

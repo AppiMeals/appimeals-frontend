@@ -61,7 +61,7 @@ class App extends Component {
 
     return (
       <>
-      {/* <AmplifySignOut /> */}
+        {/* <AmplifySignOut /> */}
 
         {/* <LinkContainer to="/signup">
           <NavItem>Signup</NavItem>
@@ -72,10 +72,10 @@ class App extends Component {
 
 
 
-      <Router>
-        <div className="App">
-          <NavBar />
-          <div id="page-body">
+        <Router>
+          <body></body>
+          <div className="App page-content">
+            <NavBar />
             <Route path="/" component={HomePage} exact />
             {/* <Route path="/SignIn" component={SignInPage} exact /> */}
             <Route path="/SignIn" component={Login} exact />
@@ -83,19 +83,16 @@ class App extends Component {
             <Route path="/SignUp" component={Registration} exact />
 
             {/* <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}> */}
-              <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
+            <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
             {/* </AppContext.Provider> */}
-            
+
             <Route path="/MyMealShop" component={MyMealShop} exact />
             <Route path="/SuperMarketLogIn" component={SuperMarketLogIn} exact />
             <Route path="/MyMealsHub" component={MyMealsHub} exact />
             <Route path="/MyMealChoices" component={MyMealChoices} exact />
           </div>
-          <Footer /> 
-        </div>
-      </Router>
-      
-
+          <Footer />
+        </Router>
       </>
     );
   }
