@@ -9,6 +9,7 @@ import { Image, Container, Row, Col } from 'react-bootstrap';
 const HomePage = () => {
     return (
         <>
+            <div className="main-page">
             <Image className="logo-styling" alt="AppiMeals Logo" src={Logo} />
 
             <p>
@@ -47,7 +48,7 @@ const HomePage = () => {
                     </Col>
                 </Row>
             </Container>
-
+        </div>
         </>
     )
 };
