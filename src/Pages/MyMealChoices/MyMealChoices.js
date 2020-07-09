@@ -36,23 +36,50 @@ const MyMealChoices = (props) => {
                 }
             )
     }, [query]);
+    //Update the string in the search bar onChange
+    const updateSearch = e => {
+        setSearch(e.target.value);
+    }
+    //Get the value of the search bar and pass it to the query
+    const getSearch = e => {
+        e.preventDefault();
+        setQuery(search);
+        setSearch('');
+    }
+    // function deleteMeal (id) {
+    // const deleteMeals = recipes.filter(recipe => recipe.id !== id);
+    // setRecipes(deleteMeals);
+    // }
 
 
 
     return (
         <>
-            <div className="main__section__MyMealChoices container">
+            <div className="main__section__MyMealChoices">
                 <h1>My Meal Choices</h1>
-                {ingredients.map(ing => {
-                    return <MealChoices
-                        key={ing.ingredientId}
-                        id={ing.ingredientId}
-                        name={ing.ingredientName}
-                        price={ing.price} />
-                })}
+
+                <Card className="meals">
+                    {recipes.map(recipe => (
+                        <MealChoices
+                            key={recipe.recipe.uri}
+                            id={recipe.recipe.uri}
+                            title={recipe.recipe.label}
+                            image={recipe.recipe.image}
+                            calories={recipe.recipe.calories}
+                            servings={recipe.recipe.yield}
+                            cookingTime={recipe.recipe.totalTime}
+                            url={recipe.recipe.url}
+                            // deleteRecipe = {deleteMeal}
+                            ingredient={recipe.recipe.ingredients}
+                            nutrients={recipe.recipe.totalNutrients} />
+                    ))}
+                </Card>
 
 
-                <TotalPrice />
+
+
+
+
             </div>
         </>
     )
