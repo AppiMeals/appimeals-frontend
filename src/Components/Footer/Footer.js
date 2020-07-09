@@ -10,7 +10,7 @@ ToDo:
 */
 
 import React from 'react';
-import Logo from '../../Images/logo5-200x200.png';
+import Logo from '../../Images/logo-round_image-text-next.svg';
 import FBLogo from '../../Images/iconfinder_icon-02_2515845.png';
 import TwitterLogo from '../../Images/iconfinder_icon-03_2515844.png';
 import './Footer.css';

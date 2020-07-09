@@ -111,7 +111,6 @@ const BrowseRecipes = () => {
                             />
                     ))}
                 </CardDeck>
-
             </div>
         </>
     )
