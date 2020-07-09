@@ -1,14 +1,3 @@
-/*
-ToDo:
-
-1. Landing pages for Contact Us, About Us & FAQ, and Blog
-2.  Link these to those landing pages ^^^
-
-3.  Set up FB and Twitter???
-4.  Link these to those ??
-
-*/
-
 import React from 'react';
 import Logo from '../../Images/logo-round_text.svg';
 import './Footer.css';
