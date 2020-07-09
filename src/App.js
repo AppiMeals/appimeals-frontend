@@ -83,7 +83,7 @@ class App extends Component {
             <Route path="/SignUp" component={Registration} exact />
 
             {/* <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}> */}
-              <Route path="/browse-recipes" component={BrowseRecipes} exact />
+              <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
             {/* </AppContext.Provider> */}
             
             <Route path="/MyMealShop" component={MyMealShop} exact />
