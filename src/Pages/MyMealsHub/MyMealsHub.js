@@ -2,9 +2,6 @@ import React from 'react';
 import '../MyMealsHub/MyMealsHub.css';
 import UpcomingMealsCard from '../../Components/UpComingMealsCard/UpcomingMealsCard';
 import BrowseCatagoryCard from '../../Components/BrowseCatagoryCard/BrowseCatagoryCard';
-import Logo from '../../Images/logo5-200x200.png';
-import Image from 'react-bootstrap/Image';
-import { Link } from 'react-router-dom';
 
 
 const MyMealsHub = () => {
