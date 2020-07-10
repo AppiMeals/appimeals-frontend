@@ -73,7 +73,6 @@ class App extends Component {
 
 
         <Router>
-          <body></body>
           <div className="App page-content">
             <NavBar />
             <Route path="/" component={HomePage} exact />

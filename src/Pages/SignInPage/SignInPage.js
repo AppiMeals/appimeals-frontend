@@ -20,7 +20,7 @@ function SignIn(props) {
         setLoading(true);
         axios
         //.get(`https://q6to3w78jj.execute-api.eu-west-1.amazonaws.com/dev/tasks?user_id=${Cookies.get("user_id")}`)
-        .get(` https://uuwrezvfy7.execute-api.eu-west-2.amazonaws.com/dev/user-registration/users?email=${userName}&password=${password}`)
+        .get(`https://uuwrezvfy7.execute-api.eu-west-2.amazonaws.com/dev/user-registration/users?email=${userName}&password=${password}`)
         .then(response => {
             // request is successful, run this
             console.log(response.data);

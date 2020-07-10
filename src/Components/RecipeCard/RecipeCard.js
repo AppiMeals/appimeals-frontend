@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Button, CardGroup, Dropdown } from 'react-bootstrap';
+import { Card, CardGroup, Dropdown } from 'react-bootstrap';
 //import parse from 'html-react-parser';
 
 import './RecipeCard.css';
@@ -7,14 +7,12 @@ import './RecipeCard.css';
 
 const RecipeCard = (props) => {
 
-    const [day, setDay] = useState('');
+    // const handleClick = () => {
+    //     props.addRecipe(props.id);
+    // }
 
-    const handleClick = () => {
-        props.addRecipe(props.id);
-    }
-
-    const handleSelect = (e) => {
-        setDay(e);
+    const handleSelect = (event) => {
+        props.addRecipe(props.id, event);
     }
 
     return (
@@ -31,13 +29,14 @@ const RecipeCard = (props) => {
                             <br />
                             <span>Servings: {props.servings}</span>
                             <br />
+                            <span>Diet: {props.diet}</span>
+                            <br />
                         </Card.Text>
 
                         <Card.Link href={props.url} target={"_blank"} >View Recipe</Card.Link>
                         <br />
                         <span className="button-group">
 
-                        <Button onClick={handleClick} variant="primary">Add to myMeals</Button>
                         <Dropdown onSelect={handleSelect}>
                             <Dropdown.Toggle variant="primary" id="dropdown-basic">
                                 Select Day
