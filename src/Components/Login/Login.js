@@ -11,12 +11,11 @@ export default function Login() {
   const [printError, setPrintError] = useState("");
   const history = useHistory();
 
-  // if (Cookies.get('appimeals') === "Authenticated"){
-  //   Cookies.remove('appimeals');
-  //   console.log("Cookie got removed");
-  //   history.push("/HomePage");
-  // }
-
+  if (Cookies.get('appimeals') === "Authenticated"){
+    Cookies.remove('appimeals');
+    console.log("Cookie got removed");
+    history.push("/HomePage");
+  }
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
