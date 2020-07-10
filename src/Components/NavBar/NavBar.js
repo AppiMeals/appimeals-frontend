@@ -23,7 +23,7 @@ import "../../../src/Components/NavBar/NavBar.css"
                 <Nav.Link href="/MyMealsHub">Hub</Nav.Link>
                 <Nav.Link href="/MyMealChoices">Meal Choices</Nav.Link>
             </Nav>   
-            <Nav clasName="ml-auto navbar nav" inline>
+            <Nav className="ml-auto navbar nav">
                 <Button variant="primary" className="signin-btn" href="/SignIn">Sign In</Button>
                 <Button variant="secondary" className="signup-btn" href="/SignUp">Sign Up</Button>
             </Nav>

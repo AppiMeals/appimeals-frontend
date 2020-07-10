@@ -2,10 +2,9 @@ import React from 'react';
 import Logo from '../../Images/logo-round_text.svg';
 import './Footer.css';
 
-import { Image, Container, Row, Col, ListGroup } from 'react-bootstrap';
+import { Image, Row, Col, ListGroup } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
-
 
 const Footer = () => (
     <>  
@@ -25,7 +24,7 @@ const Footer = () => (
                     <Col className="copyright-text">
                         Copyright 2020 &copy; APPIMEALS
                     </Col>
-                </Row>gis
+                </Row>
         </footer>
         </div>
     </>
