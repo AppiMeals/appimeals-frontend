@@ -1,9 +1,3 @@
-/*
-ToDo:
-1. Improve marketing text
-
-*/
-
 import React from 'react';
 import Logo from '../../../src/Images/logo-round_image-text-under.svg';
 import MktgImage1 from '../../Images/1479225-556x370.jpg';
