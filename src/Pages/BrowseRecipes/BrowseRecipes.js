@@ -72,15 +72,15 @@ const BrowseRecipes = () => {
             "recipe_uri": matchedRecipe.recipe.uri,
             "user_dbid": 2,
             "recipe_day": day,
-            "recipe_favourite": 0,
+            //"recipe_favourite": 0, DB DEFAULT IS 0 NO POINT OF PUSHING IT FROM HERE
             "recipe_title": matchedRecipe.recipe.label,
             "recipe_yield": matchedRecipe.recipe.yield,
             "recipe_image": matchedRecipe.recipe.image,
             "recipe_diet": matchedRecipe.recipe.dietLabels.toString(),
-            "recipe_calories": matchedRecipe.recipe.calories,
-            //"recipe_ingredients": matchedRecipe.recipe.ingredients,
+            "recipe_calories": Number.parseInt(matchedRecipe.recipe.calories).toString(),
+            "recipe_ingredients":  JSON.stringify(matchedRecipe.recipe.ingredients),
             "recipe_time": matchedRecipe.recipe.cookingTime || 0,
-            //"recipe_nutrients": matchedRecipe.recipe.totalNutrients,
+            "recipe_nutrients": JSON.stringify(matchedRecipe.recipe.totalNutrients),
             "recipe_url": matchedRecipe.recipe.url
         }
 
