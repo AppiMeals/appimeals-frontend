@@ -11,19 +11,17 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative;
   object-fit: contain;
   text-align: center;
 }
 
 /* All properties here are needed for the background image */
 .main-wrapper::after {
-  object-fit: contain;
   content: "";
   background-image: url(../src/Images/WebsiteBackground.jpg);
   background-repeat: no-repeat;
-  background-size: fill;
-  opacity: 0.3;
+  background-size: contain;
+  opacity: 0.7;
   z-index: -1;
   top: 0;
   left: 0;
