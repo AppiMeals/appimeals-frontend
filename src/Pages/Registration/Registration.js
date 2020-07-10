@@ -1,94 +1,146 @@
 import React, { useState } from 'react';
-import './Registration.css';
+import Cookies from 'js-cookie';
+import  { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import { Container, Row, Col, Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 
-function SubmitRegistration(props) {
 
+function SubmitRegistration() {
     const [firstName, setFirstName] = useState("");
-    const handleFirstNameChange = e => {
-        setFirstName(e.target.value);
-    }
-
     const [surname, setSurname] = useState("");
-    const handleSurnameChange = e => {
-        setSurname(e.target.value);
-    }
-
     const [email, setEmail] = useState("");
-    const handleEmailChange = e => {
-        setEmail(e.target.value);
+    const [password, setPassword] =  useState("");
+    const [confirmPassword, setConfirmPassword] =  useState("");
+    const history = useHistory();
+    
+    function validateForm() {
+        let validation = false;
+        let count = 0;
+        // checking for fields entered
+        if ((email.length > 0) && (password.length > 0) && (firstName.length > 0) && (surname.length > 0) && (confirmPassword.length > 0)) {
+            count += 1;
+        }
+        // checking for passwords matching
+        if (password === confirmPassword){
+            count += 1;
+        }
+        if (count === 2){
+            validation = true;
+        }
+        return validation;
     }
 
-    const [password, setPassword] =  useState("");
-    const handlePasswordChange = e => {
-        setPassword(e.target.value);
-    }
-    const handleSubmit = e => {
-        e.preventDefault();
-        props.newRegistration(firstName, surname, email);
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        //Create JSON object
+        const newUser = {
+            "firstName": firstName,
+            "surname": surname,
+            "email": email,
+            "password": password
+        }
+        console.log(newUser);
+
+        axios
+        .post(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/users`, newUser)
+        .then(response => {
+              // Test response, if all is okay, push to login screen or else
+              // just drop the cookie and go to select meal preferences (MyMealChoices)
+              //console.log(response);
+              Cookies.set('appimeals', 'Authenticated');
+              history.push("/MyMealChoices");
+            })
+        .catch(
+            (error) => {
+                console.log('Error Registering New Member', error);
+            })
     }
 
 return(
     <>
+    <form onSubmit={handleSubmit}>
+    <Container>
+        <Row>
+            <Col>
+            <FormGroup controlId="firstName" size="large">
+                <FormLabel>First Name</FormLabel>
+                <FormControl
+                    autoFocus
+                    className = "textField"
+                    type="text"
+                    value={firstName}
+                    onChange={e => setFirstName(e.target.value)}
+                />
+                </FormGroup>
+            </Col>
+            <FormGroup controlId="surname" size="large">
+                <FormLabel>Surname</FormLabel>
+                <FormControl
+                    autoFocus
+                    type="text"
+                    value={surname}
+                    onChange={e => setSurname(e.target.value)}
+                />
+            </FormGroup>
+        </Row>
+        <Row>
+            <Col>
+            <FormGroup controlId="email" size="large">
+                <FormLabel>Email</FormLabel>
+                <FormControl
+                    autoFocus
+                    type="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                />
+            </FormGroup>
+            </Col>
+            <Col>
+                &nbsp;
+            </Col>
+        </Row>
+        <Row>
+            <Col>
+            <FormGroup controlId="password" size="large">
+                <FormLabel>Password</FormLabel>
+                <FormControl
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    type="password"
+                />
+            </FormGroup>
+            </Col>
+            <FormGroup controlId="confirmPassword" size="large">
+                <FormLabel>Confirm Password</FormLabel>
+                <FormControl
+                    value={confirmPassword}
+                    onChange={e => setConfirmPassword(e.target.value)}
+                    type="password"
+                />
+            </FormGroup>
+        </Row>
+        <Row>
+            <Col>
+            <Button 
+                block size="large" 
+                disabled={!validateForm()} 
+                type="submit"
+                onClick={handleSubmit}>
+                Sign Up
+            </Button>
+            </Col>
+        </Row>
+    </Container>
+    </form>
+    {/* {console.log("firstName " + firstName)}
+    {console.log("surname " + surname)}
+    {console.log("email " + email)}
+    {console.log("password " + password)}
+    {console.log("confirmPassword " + confirmPassword)} */}
 
-        <Container>
-            <Row>
-                <Col>
-                    <h2>Sign Up!</h2> <br/>
-                    <h2>Let's Create AppiMeals...</h2>
-                </Col>
-            </Row>
-        </Container>
 
-        <Form>
-                <Form.Group>
-                    <Form.Row>
-                        <Col>
-                            <Form.Control 
-                                type="text" 
-                                placeholder="First Name" 
-                                onChange = {handleFirstNameChange}
-                                value={firstName}    
-                            /> 
-                        </Col> 
-                        <Col>
-                            <Form.Control 
-                                type="text" 
-                                placeholder="Surname" 
-                                onChange = {handleSurnameChange}
-                                value={surname}   
-                            />
-                        </Col>
-                    </Form.Row>
-
-                        <Form.Control 
-                            type="email" 
-                            placeholder="Email Address (your Login)" 
-                            onChange = {handleEmailChange}
-                            value={email}   
-                        /> 
-
-                        <Form.Control 
-                            type="password" 
-                            placeholder="Password" 
-                            onChange = {handlePasswordChange}
-                            value={password}   
-                        /> 
-                    <p>&nbsp;</p>
-                    <Button 
-                        variant="primary" 
-                        type="submit"
-                        onClick = {handleSubmit} 
-                    >
-                        Sign Up
-                    </Button>
-            </Form.Group>
-        </Form>
     </>
     );
 }
