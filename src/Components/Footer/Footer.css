@@ -1,18 +1,20 @@
 .footer {
     background-color: #f8f9fa;
-    position:absolute;
-    left:0;
-    right:0;
+    margin-top: auto;
+}
+
+.footer-elements {
+    justify-content: center;
+    padding-bottom: 10px;
 }
 
 .contact-page, .about-page, .blog-page {
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-self: start;
-    margin: 2.5rem;
+    padding: 10px;
 }
 
-.appiMealsLogo {
+
+.app-logo {
     width:125px;
-    height:125px;
+    height:75px;
+    margin-top: 25px;
 }
