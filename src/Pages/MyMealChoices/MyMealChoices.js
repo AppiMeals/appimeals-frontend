@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import './MyMealChoices.css';
+import '../MyMealChoices/MyMealChoices.css';
 import MealChoices from '../../Components/MealChoices/MealChoices';
 import TotalPrice from '../../Components/TotalPrice/TotalPrice';
 import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
+
 
 import {
     CardDeck,
@@ -13,6 +14,7 @@ import {
     Form,
     Accordion
 } from 'react-bootstrap';
+
 
 
 const MyMealChoices = (props) => {
@@ -55,7 +57,7 @@ const MyMealChoices = (props) => {
 
     return (
         <>
-            <div className="main__section__MyMealChoices">
+            <div className="main__section__MyMealChoices ">
                 <h1>My Meal Choices</h1>
 
                 <Card className="meals">

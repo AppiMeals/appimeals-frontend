@@ -4,6 +4,7 @@ import Logo from '../../Images/logo5-200x200.png';
 
 import '../MealChoices/MealChoices.css';
 
+
 import {
     Card,
     Button,
@@ -53,20 +54,19 @@ function MealChoices(props) {
     return (
         <>
 
-            <Card className="test" style={{ width: '70rem' }}>
+            <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
                 <Card.Header>Day<button className="delete__button" onClick={() => console.log(props.id)}>x</button></Card.Header>
                 <Card.Body>
                     <Container>
-                        <Image className="imageT" src={props.image} roundedCircle />
+                        <Image className="recipeImage" src={props.image} roundedCircle />
                     </Container>
-                    <Container>
                         <Card.Title>{props.title}</Card.Title>
-                        <button onClick={handleTextChange}> +</button>
+                        <button onClick={handleTextChange}>+</button>
                         {text}
                         <button onClick={handleMinusChange}>-</button>
                         <br />
                         <Card.Text>Servings</Card.Text>
-                        <span> (Adjusts weight of ingredients required for servings)</span>
+                        <Card.Text>(Adjusts weight of ingredients required for servings)</Card.Text>
                         <Card.Text>
                             <span>Calories: {Math.round((props.calories / props.servings) * text)}</span>
                             <br />
@@ -77,13 +77,13 @@ function MealChoices(props) {
                             </li>)
                             )}
                         </Card.Text>
-                    </Container>
+                   
 
                     <Accordion>
                         <Card>
                             <Card.Header>
                                 <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                    Click me for Nutritonal stuff!
+                                    Nutritional Content
                                 </Accordion.Toggle>
                             </Card.Header>
                             <Accordion.Collapse eventKey="0">
