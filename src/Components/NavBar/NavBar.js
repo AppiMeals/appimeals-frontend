@@ -1,13 +1,20 @@
 import React from 'react';
 import {Navbar, Nav, Button, Image} from 'react-bootstrap';
 import Logo from '../../../src/Images/logo-round_image-text-next.svg';
-
+import Cookies from 'js-cookie';
 import "../../../src/Components/NavBar/NavBar.css"
 
-
-
-
  const NavBar = () => {
+    let signIn = "";
+
+    console.log("MyCookie: " + Cookies.get('appimeals'));
+    if (Cookies.get('appimeals') === "Authenticated"){
+        signIn = "Sign Out";
+    }
+    else{
+        signIn = "Sign In";
+    }
+
     return (
     <>
     <header>
@@ -24,7 +31,7 @@ import "../../../src/Components/NavBar/NavBar.css"
                 <Nav.Link href="/MyMealChoices">Meal Choices</Nav.Link>
             </Nav>   
             <Nav className="ml-auto navbar nav">
-                <Button variant="primary" className="signin-btn" href="/SignIn">Sign In</Button>
+                <Button variant="primary" className="signin-btn" href="/SignIn">{signIn}</Button>
                 <Button variant="secondary" className="signup-btn" href="/SignUp">Sign Up</Button>
             </Nav>
             </Navbar.Collapse>
