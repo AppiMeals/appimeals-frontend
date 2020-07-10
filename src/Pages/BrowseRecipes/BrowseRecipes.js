@@ -150,7 +150,7 @@ const BrowseRecipes = () => {
                             url={recipe.recipe.url}
                             ingredients={recipe.recipe.ingredients}
                             nutrients={recipe.recipe.nutrients}
-                            />
+                             />
                     ))}
                 </CardDeck>
             </div>

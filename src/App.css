@@ -1,23 +1,28 @@
 
-/* Tsit */
-.page-content {
-  width: 100vw;
-  height: 100vh;
+/* The HTML classes are structured in a way to keep the footer sticked on the bottom of the page*/
+.app-body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page body style */
+.main-wrapper {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
   object-fit: contain;
   text-align: center;
-
 }
 
 /* All properties here are needed for the background image */
-.page-content::after {
+.main-wrapper::after {
   object-fit: contain;
   content: "";
   background-image: url(../src/Images/WebsiteBackground.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: fill;
   opacity: 0.3;
   z-index: -1;
   top: 0;
@@ -26,3 +31,10 @@
   right: 0;
   position: absolute;
 }
+
+/* flex: 1 can be used to stick the footer to the bottom,
+for now margin-top: auto; was applied to the footer's element css*/
+
+/* .content {
+  flex: 1;
+} */

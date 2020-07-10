@@ -21,7 +21,7 @@ import './App.css';
 
 
 class App extends Component {
-  
+
 
   render() {
 
@@ -35,29 +35,35 @@ class App extends Component {
         <LinkContainer to="/login">
           <NavItem>Login</NavItem>
         </LinkContainer> */}
+        
+          <div className="app-body">
+            <div className="main-wrapper">
+            <Router>
+              <NavBar />
 
-        <Router>
-          <div className="App">
-          <NavBar />
-          <div className="page-body">
-            <Route path="/" component={HomePage} exact />
-            {/* <Route path="/SignIn" component={SignInPage} exact /> */}
-            <Route path="/SignIn" component={Login} exact />
+              <div className="content">
+              <Router>
+                <Route path="/" component={HomePage} exact />
+                {/* <Route path="/SignIn" component={SignInPage} exact /> */}
+                <Route path="/SignIn" component={Login} exact />
 
-            <Route path="/SignUp" component={Registration} exact />
+                <Route path="/SignUp" component={Registration} exact />
 
-            {/* <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}> */}
-            <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
-            {/* </AppContext.Provider> */}
+                {/* <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}> */}
+                <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
+                {/* </AppContext.Provider> */}
 
-            <Route path="/MyMealShop" component={MyMealShop} exact />
-            <Route path="/SuperMarketLogIn" component={SuperMarketLogIn} exact />
-            <Route path="/MyMealsHub" component={MyMealsHub} exact />
-            <Route path="/MyMealChoices" component={MyMealChoices} exact />
+                <Route path="/MyMealShop" component={MyMealShop} exact />
+                <Route path="/SuperMarketLogIn" component={SuperMarketLogIn} exact />
+                <Route path="/MyMealsHub" component={MyMealsHub} exact />
+                <Route path="/MyMealChoices" component={MyMealChoices} exact />
+                </Router>
+              </div>
+              <Footer />
+              </Router>
+
+            </div>
           </div>
-          <Footer />
-        </div>
-        </Router>
       </>
     );
   }
