@@ -3,12 +3,16 @@ import axios from 'axios';
 
 import '../BrowseRecipes/BrowseRecipes.css';
 import RecipeCard from '../../Components/RecipeCard/RecipeCard';
+
 import {
     CardDeck,
     Button,
     Form,
     Dropdown,
+    Alert
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import ToggleSwitch from '../../Components/ToggleSwitch/ToggleSwitch';
 
 const BrowseRecipes = () => {
 
@@ -17,6 +21,7 @@ const BrowseRecipes = () => {
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('');
     const [diet, setDiet] = useState('balanced');
+    const [warningTrigger, setWarningTrigger] = useState(false);
 
     //Use Effect should update the with the 
 
@@ -54,8 +59,8 @@ const BrowseRecipes = () => {
     }
 
     //Take the diet label and pass it to the recipes
-    const selectDiet = (event) => {
-        setDiet(event);
+    const selectDiet = (dietChoice) => {
+        setDiet(dietChoice);
     }
 
     //Add Recipe to DB
@@ -65,14 +70,11 @@ const BrowseRecipes = () => {
         //Finding the recipe that match the one we clicked on by id, where 'id' is clicked one
         const matchedRecipe = recipes.find(recipe => recipe.recipe.uri === id);
 
-        console.log(matchedRecipe);
-
         //Create recipe object
         const newRecipe = {
             "recipe_uri": matchedRecipe.recipe.uri,
             "user_dbid": 2,
             "recipe_day": day,
-            //"recipe_favourite": 0, DB DEFAULT IS 0 NO POINT OF PUSHING IT FROM HERE
             "recipe_title": matchedRecipe.recipe.label,
             "recipe_yield": matchedRecipe.recipe.yield,
             "recipe_image": matchedRecipe.recipe.image,
@@ -91,31 +93,33 @@ const BrowseRecipes = () => {
                 console.log(response);
             })
             .catch((error) => {
-                if(error !== "ER_DUP_ENTRY")
-                console.log("Error adding a task", error);
+                console.log("Error adding a recipe",error);
+
+                if (error.response.data.error.code === 'ER_DUP_ENTRY') {
+                    setWarningTrigger(true);
+                  }
             })
     }
-
-
+      
     return (
         <>
             <div className="main-section">
 
                 <h1>Browse Recipes</h1>
+                
+                <Alert className="alert-message" variant="danger"
+                    show={warningTrigger}
+                    onClose={() => setWarningTrigger(false)}
+                    dismissible
+                >
+                    <Alert.Heading>Recipe Already Added</Alert.Heading>
+                    <p>
+                        You can find the recipe in your <Link to="/MyMealsHub">HuB</Link>
+                    </p>
+                </Alert>
 
-                <Dropdown onSelect={selectDiet}>
-                    <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                        {diet}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item eventKey="balanced" >Balanced</Dropdown.Item>
-                        <Dropdown.Item eventKey="high-protein" >High-Protein</Dropdown.Item>
-                        <Dropdown.Item eventKey="high-fiber" >High-Fiber</Dropdown.Item>
-                        <Dropdown.Item eventKey="low-fat" >Low-Fat</Dropdown.Item>
-                        <Dropdown.Item eventKey="low-carb" >Low-Carb</Dropdown.Item>
-                        <Dropdown.Item eventKey="low-sodium" >Low-Sodium</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <ToggleSwitch selectDiet={selectDiet}/>
+
 
                 <form className="search-form">
                     <Form.Control
