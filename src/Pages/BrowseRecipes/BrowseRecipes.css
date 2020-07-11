@@ -22,3 +22,9 @@
     padding: 1rem;
     margin: 1rem;
 }
+
+.alert, .alert-message {
+    display: inline-block;
+    width: fit-content;
+    justify-content: center;
+}

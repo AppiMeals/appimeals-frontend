@@ -13,6 +13,7 @@ import MyMealsHub from './Pages/MyMealsHub/MyMealsHub';
 import MyMealChoices from './Pages/MyMealChoices/MyMealChoices';
 
 import Login from "./Components/Login/Login";
+import Logout from "./Components/Login/Logout";
 
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
@@ -20,38 +21,34 @@ import Footer from './Components/Footer/Footer';
 import './App.css';
 
 
-class App extends Component {
+let authUser = "";
+if (JSON.parse(sessionStorage.getItem('AppiMealsAuthUser') === null)){
+  authUser = null;
+}
+else {
+  console.log("AppiMealsAuthUser " + JSON.parse(sessionStorage.getItem('AppiMealsAuthUser')));
+  authUser = 1;
+}
 
+class App extends Component {
 
   render() {
 
     return (
-      <>
-        {/* <AmplifySignOut /> */}
-
-        {/* <LinkContainer to="/signup">
-          <NavItem>Signup</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/login">
-          <NavItem>Login</NavItem>
-        </LinkContainer> */}
-        
+      <>     
           <div className="app-body">
             <div className="main-wrapper">
             <Router>
-              <NavBar />
-
+              <NavBar authUser={authUser} />
               <div className="content">
               <Router>
                 <Route path="/" component={HomePage} exact />
-                {/* <Route path="/SignIn" component={SignInPage} exact /> */}
                 <Route path="/SignIn" component={Login} exact />
+                <Route path="/SignOut" component={Logout} exact />
 
                 <Route path="/SignUp" component={Registration} exact />
 
-                {/* <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}> */}
                 <Route path="/BrowseRecipes" component={BrowseRecipes} exact />
-                {/* </AppContext.Provider> */}
 
                 <Route path="/MyMealShop" component={MyMealShop} exact />
                 <Route path="/SuperMarketLogIn" component={SuperMarketLogIn} exact />
@@ -61,7 +58,6 @@ class App extends Component {
               </div>
               <Footer />
               </Router>
-
             </div>
           </div>
       </>
