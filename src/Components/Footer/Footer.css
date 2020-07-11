@@ -6,6 +6,9 @@
 .footer-elements {
     justify-content: center;
     padding-bottom: 10px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center */
 }
 
 .contact-page, .about-page, .blog-page {
