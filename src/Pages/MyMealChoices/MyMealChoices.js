@@ -78,7 +78,7 @@ const MyMealChoices = (props) => {
                         key={recipe.recipe_uri}
                         id={recipe.recipe_uri}
                         day = {recipe.recipe_day}
-                        title={recipe.recipe_label}
+                        title={recipe.recipe_title}
                         image={recipe.recipe_image}
                         calories={recipe.recipe_calories}
                         servings={recipe.recipe_yield}
@@ -91,12 +91,6 @@ const MyMealChoices = (props) => {
                         /> : ""
                     )}
                 </Card>
-
-
-
-
-
-
 
 
             </div>
