@@ -18,6 +18,7 @@ import {
 
 
 const MyMealChoices = (props) => {
+    
     const [recipes, setRecipes] = useState([]);
 
 
@@ -56,12 +57,12 @@ const MyMealChoices = (props) => {
         axios
             .delete(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/MyMealChoices/${id}`)
             .then(response => {
-                console.log(id)
-                const updatedRecipeList = recipes.filter(recipe => recipe.recipe_uri !== id);
+                console.log(response)
+                const updatedRecipeList = recipes.filter(recipe => recipe.myMeals_dbid !== id);
                 setRecipes(updatedRecipeList);
             })
             .catch((error) => {
-                console.log('Error adding a task', error)
+                console.log(error.response)
             })
     }
 
@@ -77,8 +78,9 @@ const MyMealChoices = (props) => {
                 <Card className="meals-monday">
                     {recipes.map(recipe => recipe.recipe_day === "Monday" ?
                         <MealChoices
-                            key={recipe.recipe_uri}
-                            id={recipe.recipe_uri}
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
                             day={recipe.recipe_day}
                             title={recipe.recipe_title}
                             image={recipe.recipe_image}
@@ -89,7 +91,6 @@ const MyMealChoices = (props) => {
                             url={recipe.recipe_url}
                             ingredients={JSON.parse(recipe.recipe_ingredients)}
                             nutrients={JSON.parse(recipe.recipe_nutrients)}
-                            deleteRecipe={deleteRecipe}
                         /> : ""
                     )}
                 </Card>
@@ -97,8 +98,9 @@ const MyMealChoices = (props) => {
                 <Card className="meals-Tuesday">
                     {recipes.map(recipe => recipe.recipe_day === "Tuesday" ?
                         <MealChoices
-                            key={recipe.recipe_uri}
-                            id={recipe.recipe_uri}
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
                             day={recipe.recipe_day}
                             title={recipe.recipe_title}
                             image={recipe.recipe_image}
@@ -109,7 +111,6 @@ const MyMealChoices = (props) => {
                             url={recipe.recipe_url}
                             ingredients={JSON.parse(recipe.recipe_ingredients)}
                             nutrients={JSON.parse(recipe.recipe_nutrients)}
-                            deleteRecipe={deleteRecipe}
                         /> : ""
                     )}
                 </Card>
@@ -117,8 +118,9 @@ const MyMealChoices = (props) => {
                 <Card className="meals-Wednesday">
                     {recipes.map(recipe => recipe.recipe_day === "Wednesday" ?
                         <MealChoices
-                            key={recipe.recipe_uri}
-                            id={recipe.recipe_uri}
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
                             day={recipe.recipe_day}
                             title={recipe.recipe_title}
                             image={recipe.recipe_image}
@@ -129,89 +131,87 @@ const MyMealChoices = (props) => {
                             url={recipe.recipe_url}
                             ingredients={JSON.parse(recipe.recipe_ingredients)}
                             nutrients={JSON.parse(recipe.recipe_nutrients)}
-                            deleteRecipe={deleteRecipe}
                         /> : ""
                     )}
                 </Card>
 
                 <Card className="meals-Thursday">
-                        {recipes.map(recipe => recipe.recipe_day === "Thursday" ?
-                            <MealChoices
-                                key={recipe.recipe_uri}
-                                id={recipe.recipe_uri}
-                                day={recipe.recipe_day}
-                                title={recipe.recipe_title}
-                                image={recipe.recipe_image}
-                                calories={recipe.recipe_calories}
-                                servings={recipe.recipe_yield}
-                                cookingTime={recipe.recipe_totalTime}
-                                diet={recipe.recipe_dietLabels}
-                                url={recipe.recipe_url}
-                                ingredients={JSON.parse(recipe.recipe_ingredients)}
-                                nutrients={JSON.parse(recipe.recipe_nutrients)}
-                                deleteRecipe={deleteRecipe}
-                            /> : ""
-                        )}
+                    {recipes.map(recipe => recipe.recipe_day === "Thursday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            day={recipe.recipe_day}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
                 </Card>
 
                 <Card className="meals-Friday">
-                        {recipes.map(recipe => recipe.recipe_day === "Friday" ?
-                            <MealChoices
-                                key={recipe.recipe_uri}
-                                id={recipe.recipe_uri}
-                                day={recipe.recipe_day}
-                                title={recipe.recipe_title}
-                                image={recipe.recipe_image}
-                                calories={recipe.recipe_calories}
-                                servings={recipe.recipe_yield}
-                                cookingTime={recipe.recipe_totalTime}
-                                diet={recipe.recipe_dietLabels}
-                                url={recipe.recipe_url}
-                                ingredients={JSON.parse(recipe.recipe_ingredients)}
-                                nutrients={JSON.parse(recipe.recipe_nutrients)}
-                                deleteRecipe={deleteRecipe}
-                            /> : ""
-                        )}
+                    {recipes.map(recipe => recipe.recipe_day === "Friday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            day={recipe.recipe_day}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
                 </Card>
-                
+
                 <Card className="meals-Saturday">
-                        {recipes.map(recipe => recipe.recipe_day === "Saturday" ?
-                            <MealChoices
-                                key={recipe.recipe_uri}
-                                id={recipe.recipe_uri}
-                                day={recipe.recipe_day}
-                                title={recipe.recipe_title}
-                                image={recipe.recipe_image}
-                                calories={recipe.recipe_calories}
-                                servings={recipe.recipe_yield}
-                                cookingTime={recipe.recipe_totalTime}
-                                diet={recipe.recipe_dietLabels}
-                                url={recipe.recipe_url}
-                                ingredients={JSON.parse(recipe.recipe_ingredients)}
-                                nutrients={JSON.parse(recipe.recipe_nutrients)}
-                                deleteRecipe={deleteRecipe}
-                            /> : ""
-                        )}
+                    {recipes.map(recipe => recipe.recipe_day === "Saturday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            day={recipe.recipe_day}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
                 </Card>
 
                 <Card className="meals-Sunday">
-                        {recipes.map(recipe => recipe.recipe_day === "Sunday" ?
-                            <MealChoices
-                                key={recipe.recipe_uri}
-                                id={recipe.recipe_uri}
-                                day={recipe.recipe_day}
-                                title={recipe.recipe_title}
-                                image={recipe.recipe_image}
-                                calories={recipe.recipe_calories}
-                                servings={recipe.recipe_yield}
-                                cookingTime={recipe.recipe_totalTime}
-                                diet={recipe.recipe_dietLabels}
-                                url={recipe.recipe_url}
-                                ingredients={JSON.parse(recipe.recipe_ingredients)}
-                                nutrients={JSON.parse(recipe.recipe_nutrients)}
-                                deleteRecipe={deleteRecipe}
-                            /> : ""
-                        )}
+                    {recipes.map(recipe => recipe.recipe_day === "Sunday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
                 </Card>
 
             </div>
