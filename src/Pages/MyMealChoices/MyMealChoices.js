@@ -60,6 +60,40 @@ const MyMealChoices = (props) => {
             <div className="main__section__MyMealChoices ">
                 <h1>My Meal Choices</h1>
 
+                <Card className="meals meals-monday">
+                    {recipes.map(recipe => recipe.recipe_day === "Monday" ? 
+                    <MealChoices
+                    key={recipe.recipe.uri}
+                    id={recipe.recipe.uri}
+                    title={recipe.recipe.label}
+                    image={recipe.recipe.image}
+                    calories={recipe.recipe.calories}
+                    servings={recipe.recipe.yield}
+                    cookingTime={recipe.recipe.totalTime}
+                    url={recipe.recipe.url}
+                    // deleteRecipe = {deleteMeal}
+                    ingredient={recipe.recipe.ingredients}
+                    nutrients={recipe.recipe.totalNutrients} /> : ''
+                    )}     
+                </Card>
+
+                <Card className="meals meals-tuesday">
+                    {recipes.map(recipe => recipe.recipe_day === "Tuesday" ? 
+                    <MealChoices
+                    key={recipe.recipe.uri}
+                    id={recipe.recipe.uri}
+                    title={recipe.recipe.label}
+                    image={recipe.recipe.image}
+                    calories={recipe.recipe.calories}
+                    servings={recipe.recipe.yield}
+                    cookingTime={recipe.recipe.totalTime}
+                    url={recipe.recipe.url}
+                    // deleteRecipe = {deleteMeal}
+                    ingredient={recipe.recipe.ingredients}
+                    nutrients={recipe.recipe.totalNutrients} /> : ''
+                    )}     
+                </Card>
+
                 <Card className="meals">
                     {recipes.map(recipe => (
                         <MealChoices
@@ -76,6 +110,8 @@ const MyMealChoices = (props) => {
                             nutrients={recipe.recipe.totalNutrients} />
                     ))}
                 </Card>
+
+
 
 
 

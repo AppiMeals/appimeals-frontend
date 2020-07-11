@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './ToggleSwitch.css';
 
 
 const ToggleSwitch = (props) => {
 
-    const [diet, setDiet] = useState();
 
     const handleClick = (event) => {
-        setDiet(event.target.value);
-        props.selectDiet(diet);
+        props.selectDiet(event.target.value);
     }
 
     return (
