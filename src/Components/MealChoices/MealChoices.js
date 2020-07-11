@@ -66,11 +66,12 @@ function MealChoices(props) {
                     <Container>
                         <Image className="recipeImage" src={props.image} roundedCircle />
                     </Container>
-                        <Card.Title>{props.title}</Card.Title>
+           
                         <button onClick={handleTextChange}>+</button>
                         {text}
                         <button onClick={handleMinusChange}>-</button>
                         <br />
+                        <Card.Title>{props.title}</Card.Title>
                         <Card.Text>Servings</Card.Text>
                         <Card.Text>(Adjusts weight of ingredients required for servings)</Card.Text>
                         <Card.Text>
@@ -157,10 +158,11 @@ function MealChoices(props) {
             <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
                 <Card.Header>Wednesday<button className="delete__button" onClick={() => console.log(props.id)}>x</button></Card.Header>
                 <Card.Body>
+                     
                     <Container>
                         <Image className="recipeImage" src={props.image} roundedCircle />
                     </Container>
-                        <Card.Title>{props.title}</Card.Title>
+                       
                         <button onClick={handleTextChange}>+</button>
                         {text}
                         <button onClick={handleMinusChange}>-</button>
