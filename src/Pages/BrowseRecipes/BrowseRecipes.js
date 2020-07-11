@@ -37,7 +37,7 @@ const BrowseRecipes = () => {
                 (error) => {
                     console.log('Error fetching data', error)
                 })
-    }, [diet, query]);
+    }, [query, diet]);
   
 
     
@@ -85,14 +85,13 @@ const BrowseRecipes = () => {
         }
 
 
-        console.log(newRecipe);
-
         axios
             .post('https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/browse-recipes', newRecipe)
             .then(response => {
                 console.log(response);
             })
             .catch((error) => {
+                if(error !== "ER_DUP_ENTRY")
                 console.log("Error adding a task", error);
             })
     }
