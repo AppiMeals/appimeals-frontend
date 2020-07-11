@@ -74,6 +74,9 @@ const MyMealChoices = (props) => {
             <div className="main__section__MyMealChoices ">
                 <h1>My Meal Choices</h1>
                 
+
+                <Card className="meals-monday">
+                    {recipes.map(recipe =>recipe.recipe_day === "Monday" ?
                         <MealChoices
                         key={recipe.recipe_uri}
                         id={recipe.recipe_uri}
