@@ -42,7 +42,7 @@ const RecipeCard = (props) => {
                             <Dropdown.Menu>
                                 <Dropdown.Item eventKey="Monday">Monday</Dropdown.Item>
                                 <Dropdown.Item eventKey="Tuesday">Tuesday</Dropdown.Item>
-                                <Dropdown.Item eventKey="Wednesday">Wednsday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Wednesday">Wednesday</Dropdown.Item>
                                 <Dropdown.Item eventKey="Thursday">Thursday</Dropdown.Item>
                                 <Dropdown.Item eventKey="Friday">Friday</Dropdown.Item>
                                 <Dropdown.Item eventKey="Saturday">Saturday</Dropdown.Item>
