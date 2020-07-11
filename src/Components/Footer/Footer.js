@@ -12,7 +12,6 @@ const Footer = () => (
 
                 <Image className="app-logo" src={Logo}/>
 
-                {/* <ListGroup center className="footer-elements" horizontal> */}
                 <ListGroup className="footer-elements" horizontal>
                     <Link className="contact-page" to="">Contact Us</Link>
                     <Link className="about-page" to="">About Us &amp; FAQ</Link>
