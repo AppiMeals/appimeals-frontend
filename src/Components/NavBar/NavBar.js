@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Navbar, Nav, Button, Image} from 'react-bootstrap';
 import Logo from '../../../src/Images/logo-round_image-text-next.svg';
-import Cookies from 'js-cookie';
 import "../../../src/Components/NavBar/NavBar.css"
 
- const NavBar = () => {
+ const NavBar = ({authUser}) => {
+    //const { authenticated } = useContext(RootContext);
+
+    console.log("authUser " + authUser);
     let signIn = "";
-
-    console.log("My authUser from NavBar: " + localStorage.authUser);
-
-    // if (Cookies.get('appimeals') === "Authenticated"){
-    //     signIn = "Sign Out";
-    // }
-    // else{
-    //     signIn = "Sign In";
-    // }
+    let signInHREF = "";
     
-    console.log("localStorage Object" + localStorage);
+    // // //const user =  JSON.parse(localStorage.getItem('AppiMealsAuthUser'));
 
+    // // //const user =  JSON.parse(sessionStorage.getItem('AppiMealsAuthUser'));
+    
+    if (authUser === null) {
+        signIn = "Sign In";
+        signInHREF = "/SignIn";
+    }
+    else{
+        //console.log("user OBJECT VALUES" + Object.values(user));
+        signIn = "Sign Out";
+        signInHREF = "/SignOut";
+    }
 
     return (
     <>
@@ -35,7 +40,9 @@ import "../../../src/Components/NavBar/NavBar.css"
                 <Nav.Link href="/MyMealChoices">Meal Choices</Nav.Link>
             </Nav>   
             <Nav className="ml-auto navbar nav">
-                <Button variant="primary" className="signin-btn" href="/SignIn">{signIn}</Button>
+                {/* <Button variant="primary" className="signin-btn" href="/SignIn">{signIn}</Button> */}
+                <Button variant="primary" className="signin-btn" href={signInHREF}>{signIn}</Button>
+
                 <Button variant="secondary" className="signup-btn" href="/SignUp">Sign Up</Button>
             </Nav>
             </Navbar.Collapse>

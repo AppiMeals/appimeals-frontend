@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import  { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-import Cookies from 'js-cookie';
 import "./Login.css";
 
 export default function Login() {
@@ -10,13 +9,6 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [printError, setPrintError] = useState("");
   const history = useHistory();
-  const authUser = useState("");
-
-  if (Cookies.get('appimeals') === "Authenticated"){
-    Cookies.remove('appimeals');
-    console.log("Cookie got removed");
-    history.push("/HomePage");
-  }
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -42,11 +34,10 @@ export default function Login() {
                 }
                 else{
                   setPrintError("");
-                  // drop cookie and move on to hub
-                  //Cookies.set('appimeals', 'Authenticated');
+                  //localStorage.setItem('AppiMealsAuthUser', JSON.stringify(response.data.email["0"]));
 
-                  localStorage.setItem('authUser', JSON.stringify(authUser));
-                  console.log("localStorage Object" + localStorage);
+                  sessionStorage.setItem('AppiMealsAuthUser', JSON.stringify(response.data.email["0"]));
+                  console.log("Session Created. " + JSON.parse(sessionStorage.getItem('AppiMealsAuthUser')));
 
                   history.push("/MyMealsHub");
                 }
