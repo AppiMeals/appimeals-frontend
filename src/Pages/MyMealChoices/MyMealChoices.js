@@ -29,7 +29,7 @@ const MyMealChoices = (props) => {
             .get(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/MyMealChoices`)
             .then(response => {
                 console.log(response.data.recipesData)
-                setRecipes(response.data.recipesData)
+                setRecipes(response.data.recipesData.sort(sortFunction))
             })
             .catch(
                 (error) => {
@@ -37,22 +37,6 @@ const MyMealChoices = (props) => {
                 })
     }, []);
 
-    // const sort = {
-    //     "monday": 1,
-    //     "tuesday": 2,
-    //     "wednesday": 3,
-    //     "thursday": 4,
-    //     "friday": 5,
-    //     "saturday": 6,
-    //     "sunday": 7
-    //   }
-
-    //   let daySorted = () => {props.day.sort(function sortByDay(a,b){
-    //       let day1=a.day.toLowerCase();
-    //       let day2 = b.day.toLowerCase();
-    //       return sort[day1] - sort[day2];
-    //   })
-    // }
     const deleteRecipe = (id) => {
         axios
             .delete(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/MyMealChoices/${id}`)
@@ -66,6 +50,14 @@ const MyMealChoices = (props) => {
             })
     }
 
+    const sorted = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+    const sortFunction = (a,b) => {
+        let day1 = sorted.indexOf(a.recipe_day);
+        let day2 = sorted.indexOf(b.recipe_day);
+        return day1 < day2 ? -1 : 1;
+    }
+
 
 
 
@@ -76,7 +68,7 @@ const MyMealChoices = (props) => {
                 <h1>My Meal Choices</h1>
 
                 <Card className="meals-monday">
-                    {recipes.map(recipe => recipe.recipe_day === "Monday" ?
+                    {recipes.map(recipe => 
                         <MealChoices
                             deleteRecipe={deleteRecipe}
                             key={recipe.myMeals_dbid}
@@ -91,11 +83,11 @@ const MyMealChoices = (props) => {
                             url={recipe.recipe_url}
                             ingredients={JSON.parse(recipe.recipe_ingredients)}
                             nutrients={JSON.parse(recipe.recipe_nutrients)}
-                        /> : ""
+                        />
                     )}
                 </Card>
 
-                <Card className="meals-Tuesday">
+                {/* <Card className="meals-Tuesday">
                     {recipes.map(recipe => recipe.recipe_day === "Tuesday" ?
                         <MealChoices
                             deleteRecipe={deleteRecipe}
@@ -212,7 +204,7 @@ const MyMealChoices = (props) => {
                             nutrients={JSON.parse(recipe.recipe_nutrients)}
                         /> : ""
                     )}
-                </Card>
+                </Card> */}
 
             </div>
         </>
