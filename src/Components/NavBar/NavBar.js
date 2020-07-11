@@ -7,13 +7,17 @@ import "../../../src/Components/NavBar/NavBar.css"
  const NavBar = () => {
     let signIn = "";
 
-    console.log("MyCookie: " + Cookies.get('appimeals'));
-    if (Cookies.get('appimeals') === "Authenticated"){
-        signIn = "Sign Out";
-    }
-    else{
-        signIn = "Sign In";
-    }
+    console.log("My authUser from NavBar: " + localStorage.authUser);
+
+    // if (Cookies.get('appimeals') === "Authenticated"){
+    //     signIn = "Sign Out";
+    // }
+    // else{
+    //     signIn = "Sign In";
+    // }
+    
+    console.log("localStorage Object" + localStorage);
+
 
     return (
     <>
