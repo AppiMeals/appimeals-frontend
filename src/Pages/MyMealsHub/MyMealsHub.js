@@ -84,8 +84,8 @@ const MyMealsHub = (props) => {
 
                     <div>
                         <h3> My Upcoming Meals</h3>
-                        <div class="row">
-                            <div class="box1 col-12">
+                        <div className="row">
+                            <div className="box1 col-12">
                                 {recipes.map(recipe => (
                                     <UpcomingMealsCard
                                     key={recipe.recipe.uri}
@@ -103,8 +103,8 @@ const MyMealsHub = (props) => {
                     <div>
                         <div>
                             <h3>Browse Meals by Catagory</h3>
-                            <div class="row">
-                                <div class="box1 col-12">
+                            <div className="row">
+                                <div className="box1 col-12">
                                     <BrowseCatagoryCard />
                                 </div>
                             </div>
