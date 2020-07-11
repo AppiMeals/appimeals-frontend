@@ -21,8 +21,6 @@ const MyMealChoices = (props) => {
     
     const [recipes, setRecipes] = useState([]);
 
-
-
     useEffect(() => {
         //GET RECIPES
         axios
