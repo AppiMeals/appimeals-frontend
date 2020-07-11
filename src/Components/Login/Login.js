@@ -10,6 +10,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [printError, setPrintError] = useState("");
   const history = useHistory();
+  const authUser = useState("");
 
   if (Cookies.get('appimeals') === "Authenticated"){
     Cookies.remove('appimeals');
@@ -42,7 +43,11 @@ export default function Login() {
                 else{
                   setPrintError("");
                   // drop cookie and move on to hub
-                  Cookies.set('appimeals', 'Authenticated');
+                  //Cookies.set('appimeals', 'Authenticated');
+
+                  localStorage.setItem('authUser', JSON.stringify(authUser));
+                  console.log("localStorage Object" + localStorage);
+
                   history.push("/MyMealsHub");
                 }
               })
