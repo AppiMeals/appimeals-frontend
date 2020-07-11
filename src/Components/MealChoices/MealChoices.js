@@ -39,17 +39,17 @@ function MealChoices(props) {
     }
 
     let nutFat = Object.values(props.nutrients.FAT);
-    // let secondArr = nutFat[1].toFixed(2);
+
     let nutChol = Object.values(props.nutrients.CHOLE);
-    // let secondArrChol = nutChol[1].toFixed(2);
+ 
     let nutSugar = Object.values(props.nutrients.SUGAR);
-    // let secondArrSugar = nutSugar[1].toFixed(2);
+  
     let nutCarbs = Object.values(props.nutrients.CHOCDF);
-    // let secondArrCarbs = nutCarbs[1].toFixed(2);
+
     let nutFiber = Object.values(props.nutrients.FIBTG);
-    // let secondArrFiber = nutFiber[1].toFixed(2);
+   
     let nutProtein = Object.values(props.nutrients.PROCNT);
-    // let secondArrProtein = nutProtein[1].toFixed(2);
+
 
 
 
@@ -70,7 +70,7 @@ function MealChoices(props) {
                         <Card.Title>{props.title}</Card.Title>
            
                         <button onClick={handleTextChange}>+</button>
-                        {text}
+                        { text }
                         <button onClick={handleMinusChange}>-</button>
                         <br />
                         
@@ -97,11 +97,17 @@ function MealChoices(props) {
                             </Card.Header>
                             <Accordion.Collapse eventKey="0">
                                 <Card.Body>
-                                    Per Original Serving: {props.servings}:
-                                    
-                                    <br />
-                                    {nutFat[1]}{nutFat[2]}{nutFat[0]} 
-                                 
+                                    {nutFat[1]} {Math.round((nutFat[2]/props.servings)*text)}{nutFat[0]} 
+                                    <br/>
+                                    {nutChol[1]} {Math.round((nutChol[2]/props.servings)*text)}{nutChol[0]} 
+                                    <br/>
+                                    {nutCarbs[1]} {Math.round((nutCarbs[2]/props.servings)*text)}{nutCarbs[0]}
+                                    <br/>
+                                    {nutFiber[1]} {Math.round((nutFiber[2]/props.servings)*text)}{nutFiber[0]}  
+                                    <br/>
+                                    {nutProtein[1]} {Math.round((nutProtein[2]/props.servings)*text)}{nutProtein[0]} 
+                                    <br/>
+                                    {nutSugar[1]} {Math.round((nutSugar[2]/props.servings)*text)}{nutSugar[0]} 
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
