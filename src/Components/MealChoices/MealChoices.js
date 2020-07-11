@@ -39,23 +39,29 @@ function MealChoices(props) {
     }
 
     let nutFat = Object.values(props.nutrients.FAT);
-    let secondArr = nutFat[1].toFixed(2);
+    // let secondArr = nutFat[1].toFixed(2);
     let nutChol = Object.values(props.nutrients.CHOLE);
-    let secondArrChol = nutChol[1].toFixed(2);
+    // let secondArrChol = nutChol[1].toFixed(2);
     let nutSugar = Object.values(props.nutrients.SUGAR);
-    let secondArrSugar = nutSugar[1].toFixed(2);
+    // let secondArrSugar = nutSugar[1].toFixed(2);
     let nutCarbs = Object.values(props.nutrients.CHOCDF);
-    let secondArrCarbs = nutCarbs[1].toFixed(2);
+    // let secondArrCarbs = nutCarbs[1].toFixed(2);
     let nutFiber = Object.values(props.nutrients.FIBTG);
-    let secondArrFiber = nutFiber[1].toFixed(2);
+    // let secondArrFiber = nutFiber[1].toFixed(2);
     let nutProtein = Object.values(props.nutrients.PROCNT);
-    let secondArrProtein = nutProtein[1].toFixed(2);
+    // let secondArrProtein = nutProtein[1].toFixed(2);
 
+
+
+    const handleDeleteClick = () => {
+        props.deleteRecipe(props.id);
+    }
+   
     return (
         <>
 
             <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
-                <Card.Header>Day<button className="delete__button" onClick={() => console.log(props.id)}>x</button></Card.Header>
+                <Card.Header>{props.day}<button className="delete__button" onClick={handleDeleteClick}>x</button></Card.Header>
                 <Card.Body>
                     <Container>
                         <Image className="recipeImage" src={props.image} roundedCircle />
@@ -73,7 +79,7 @@ function MealChoices(props) {
                             <br />
                             <span>Ingredients (Original Servings:{props.servings})</span>
                             <br />
-                            {props.ingredient.map(ingredient => (<li>{ingredient.text} Weight:{Math.round((ingredient.weight / props.servings) * text)}g
+                            {props.ingredients.map(ingredient => (<li>{ingredient.text} Weight:{Math.round((ingredient.weight / props.servings) * text)}g
                             </li>)
                             )}
                         </Card.Text>
@@ -89,18 +95,246 @@ function MealChoices(props) {
                             <Accordion.Collapse eventKey="0">
                                 <Card.Body>
                                     Per Original Serving: {props.servings}:
+                                    
                                     <br />
-                                    {nutFat[0]} {secondArr}{nutFat[2]}
+                                    {nutFat[1]}{nutFat[2]}{nutFat[0]} 
+                                 
+                                 
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+
+                </Card.Body>
+            </Card>
+            <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
+                <Card.Header>Tuesday<button className="delete__button" onClick={() => console.log(props.id)}>x</button></Card.Header>
+                <Card.Body>
+                    <Container>
+                        <Image className="recipeImage" src={props.image} roundedCircle />
+                    </Container>
+                        <Card.Title>{props.title}</Card.Title>
+                        <button onClick={handleTextChange}>+</button>
+                        {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        <br />
+                        <Card.Text>Servings</Card.Text>
+                        <Card.Text>(Adjusts weight of ingredients required for servings)</Card.Text>
+                        <Card.Text>
+                            <span>Calories: {Math.round((props.calories / props.servings) * text)}</span>
+                            <br />
+                            <br />
+                            <span>Ingredients (Original Servings:{props.servings})</span>
+                            <br />
+                            {props.ingredients.map(ingredient => (<li>{ingredient.text} Weight:{Math.round((ingredient.weight / props.servings) * text)}g
+                            </li>)
+                            )}
+                        </Card.Text>
+                   
+
+                    <Accordion>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                    Nutritional Content
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>
+                                    Per Original Serving: {props.servings}:
+                                    
                                     <br />
-                                    {nutChol[0]} {secondArrChol}{nutChol[2]}
+                                    {nutFat[1]}{nutFat[2]}{nutFat[0]} 
+                                 
+                                 
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+
+                </Card.Body>
+            </Card>
+            <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
+                <Card.Header>Wednesday<button className="delete__button" onClick={() => console.log(props.id)}>x</button></Card.Header>
+                <Card.Body>
+                    <Container>
+                        <Image className="recipeImage" src={props.image} roundedCircle />
+                    </Container>
+                        <Card.Title>{props.title}</Card.Title>
+                        <button onClick={handleTextChange}>+</button>
+                        {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        <br />
+                        <Card.Text>Servings</Card.Text>
+                        <Card.Text>(Adjusts weight of ingredients required for servings)</Card.Text>
+                        <Card.Text>
+                            <span>Calories: {Math.round((props.calories / props.servings) * text)}</span>
+                            <br />
+                            <br />
+                            <span>Ingredients (Original Servings:{props.servings})</span>
+                            <br />
+                            {props.ingredients.map(ingredient => (<li>{ingredient.text} Weight:{Math.round((ingredient.weight / props.servings) * text)}g
+                            </li>)
+                            )}
+                        </Card.Text>
+                   
+
+                    <Accordion>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                    Nutritional Content
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>
+                                    Per Original Serving: {props.servings}:
+                                    
                                     <br />
-                                    {nutSugar[0]} {secondArrSugar}{nutSugar[2]}
+                                    {nutFat[1]}{nutFat[2]}{nutFat[0]} 
+                                 
+                                 
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+
+                </Card.Body>
+            </Card>
+            <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
+                <Card.Header>Friday<button className="delete__button" onClick={() => console.log(props.id)}>x</button></Card.Header>
+                <Card.Body>
+                    <Container>
+                        <Image className="recipeImage" src={props.image} roundedCircle />
+                    </Container>
+                        <Card.Title>{props.title}</Card.Title>
+                        <button onClick={handleTextChange}>+</button>
+                        {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        <br />
+                        <Card.Text>Servings</Card.Text>
+                        <Card.Text>(Adjusts weight of ingredients required for servings)</Card.Text>
+                        <Card.Text>
+                            <span>Calories: {Math.round((props.calories / props.servings) * text)}</span>
+                            <br />
+                            <br />
+                            <span>Ingredients (Original Servings:{props.servings})</span>
+                            <br />
+                            {props.ingredients.map(ingredient => (<li>{ingredient.text} Weight:{Math.round((ingredient.weight / props.servings) * text)}g
+                            </li>)
+                            )}
+                        </Card.Text>
+                   
+
+                    <Accordion>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                    Nutritional Content
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>
+                                    Per Original Serving: {props.servings}:
+                                    
                                     <br />
-                                    {nutCarbs[0]} {secondArrCarbs}{nutCarbs[2]}
+                                    {nutFat[1]}{nutFat[2]}{nutFat[0]} 
+                                 
+                                 
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+
+                </Card.Body>
+            </Card>
+            <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
+                <Card.Header>Saturday<button className="delete__button" onClick={() => console.log(props.id)}>x</button></Card.Header>
+                <Card.Body>
+                    <Container>
+                        <Image className="recipeImage" src={props.image} roundedCircle />
+                    </Container>
+                        <Card.Title>{props.title}</Card.Title>
+                        <button onClick={handleTextChange}>+</button>
+                        {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        <br />
+                        <Card.Text>Servings</Card.Text>
+                        <Card.Text>(Adjusts weight of ingredients required for servings)</Card.Text>
+                        <Card.Text>
+                            <span>Calories: {Math.round((props.calories / props.servings) * text)}</span>
+                            <br />
+                            <br />
+                            <span>Ingredients (Original Servings:{props.servings})</span>
+                            <br />
+                            {props.ingredients.map(ingredient => (<li>{ingredient.text} Weight:{Math.round((ingredient.weight / props.servings) * text)}g
+                            </li>)
+                            )}
+                        </Card.Text>
+                   
+
+                    <Accordion>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                    Nutritional Content
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>
+                                    Per Original Serving: {props.servings}:
+                                    
                                     <br />
-                                    {nutFiber[0]} {secondArrFiber}{nutFiber[2]}
+                                    {nutFat[1]}{nutFat[2]}{nutFat[0]} 
+                                 
+                                 
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+
+                </Card.Body>
+            </Card>
+            <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
+                <Card.Header>Sunday<button className="delete__button" onClick={() => console.log(props.id)}>x</button></Card.Header>
+                <Card.Body>
+                    <Container>
+                        <Image className="recipeImage" src={props.image} roundedCircle />
+                    </Container>
+                        <Card.Title>{props.title}</Card.Title>
+                        <button onClick={handleTextChange}>+</button>
+                        {text}
+                        <button onClick={handleMinusChange}>-</button>
+                        <br />
+                        <Card.Text>Servings</Card.Text>
+                        <Card.Text>(Adjusts weight of ingredients required for servings)</Card.Text>
+                        <Card.Text>
+                            <span>Calories: {Math.round((props.calories / props.servings) * text)}</span>
+                            <br />
+                            <br />
+                            <span>Ingredients (Original Servings:{props.servings})</span>
+                            <br />
+                            {props.ingredients.map(ingredient => (<li>{ingredient.text} Weight:{Math.round((ingredient.weight / props.servings) * text)}g
+                            </li>)
+                            )}
+                        </Card.Text>
+                   
+
+                    <Accordion>
+                        <Card>
+                            <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                    Nutritional Content
+                                </Accordion.Toggle>
+                            </Card.Header>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>
+                                    Per Original Serving: {props.servings}:
+                                    
                                     <br />
-                                    {nutProtein[0]} {secondArrProtein}{nutProtein[2]}
+                                    {nutFat[1]}{nutFat[2]}{nutFat[0]} 
+                                 
+                                 
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
