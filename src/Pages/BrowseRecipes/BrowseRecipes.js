@@ -8,7 +8,6 @@ import {
     CardDeck,
     Button,
     Form,
-    Dropdown,
     Alert
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -20,7 +19,7 @@ const BrowseRecipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('');
-    const [diet, setDiet] = useState('balanced');
+    const [diet, setDiet] = useState('');
     const [warningTrigger, setWarningTrigger] = useState(false);
 
     //Use Effect should update the with the 
@@ -41,6 +40,8 @@ const BrowseRecipes = () => {
             .catch(
                 (error) => {
                     console.log('Error fetching data', error)
+                    console.log(error.response.data)
+                        
                 })
     }, [query, diet]);
   
@@ -80,7 +81,7 @@ const BrowseRecipes = () => {
             "recipe_image": matchedRecipe.recipe.image,
             "recipe_diet": matchedRecipe.recipe.dietLabels.toString(),
             "recipe_calories": Number.parseInt(matchedRecipe.recipe.calories).toString(),
-            "recipe_ingredients":  JSON.stringify(matchedRecipe.recipe.ingredients),
+            "recipe_ingredients": JSON.stringify(matchedRecipe.recipe.ingredients),
             "recipe_time": matchedRecipe.recipe.cookingTime || 0,
             "recipe_nutrients": JSON.stringify(matchedRecipe.recipe.totalNutrients),
             "recipe_url": matchedRecipe.recipe.url
@@ -97,7 +98,7 @@ const BrowseRecipes = () => {
 
                 if (error.response.data.error.code === 'ER_DUP_ENTRY') {
                     setWarningTrigger(true);
-                  }
+                }
             })
     }
       
