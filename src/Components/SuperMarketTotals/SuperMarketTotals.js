@@ -4,14 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 
 import '../SuperMarketTotals/SuperMarketTotals.css';
 
-//import Logo from '../../Images/logo5-200x200.png';
-//import Image from 'react-bootstrap/Image';
-
-
-
-//import { Link } from 'react-router-dom';
-
-
+import { Link } from 'react-router-dom';
 
 const SuperMarketTotals = (props) => {
     
@@ -25,21 +18,17 @@ const SuperMarketTotals = (props) => {
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label>Choose your SuperMarket </Form.Label>
                     <Form.Control as="select">
-                        <option>Asda £££</option>
-                        <option>Sainsburys £££</option>
-                        <option>Tesco £££</option>
-                        <option>Waitrose £££</option>
-                        <option>Morrisons £££</option>
+                        <option>Asda £25.60</option>
+                        <option>Sainsburys £21.20</option>
+                        <option>Tesco £20.50</option>
+                        <option>Waitrose £26.90</option>
+                        <option>Morrisons £23.50</option>
                     </Form.Control>
+                    <Link to={"/SuperMarketLogIn"}><Button>Send To Grocer</Button></Link>
                 </Form.Group>
-
-               
-
-
             </div>
-
             <div>
-            <Button className = "sendGrocer" variant="primary">Send to Grocer</Button>{' '}
+           
             </div>
 
         </>

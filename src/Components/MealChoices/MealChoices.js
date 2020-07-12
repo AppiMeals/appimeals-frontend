@@ -1,14 +1,10 @@
-import React, { Component, useState } from 'react';
-import Logo from '../../Images/logo5-200x200.png';
-
+import React, { useState } from 'react';
 
 import '../MealChoices/MealChoices.css';
-
 
 import {
     Card,
     Button,
-    CardDeck,
     Container,
     Image,
     Accordion
@@ -19,23 +15,23 @@ function MealChoices(props) {
     const [text = props.servings, setText] = useState();
 
     const add = (num) => {
-        return num + 1;
+        return parseFloat(num + 1);
     }
 
     const minus = (num) => {
         if (num === 1) {
             return 1
         } else {
-            return num - 1;
+            return parseFloat(num - 1);
         };
     }
 
     const handleTextChange = () => {
-        setText(add(text));
+        setText(add(parseFloat(text)));
     }
 
     const handleMinusChange = () => {
-        setText(minus(text))
+        setText(minus(parseFloat(text)))
     }
 
     let nutFat = Object.values(props.nutrients.FAT);
@@ -51,8 +47,6 @@ function MealChoices(props) {
     let nutProtein = Object.values(props.nutrients.PROCNT);
 
 
-
-
     const handleDeleteClick = () => {
         props.deleteRecipe(props.id);
     }
@@ -63,26 +57,26 @@ function MealChoices(props) {
             <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
                 <Card.Header>{props.day}<button className="delete__button" onClick={handleDeleteClick}>x</button></Card.Header>
                 <Card.Body>
-                    <Container>
+                
                         <Image className="recipeImage" src={props.image} roundedCircle />
-                    </Container>
+             
 
                         <Card.Title>{props.title}</Card.Title>
            
                         <button onClick={handleTextChange}>+</button>
-                        { text }
+                        {parseFloat(text)}
                         <button onClick={handleMinusChange}>-</button>
                         <br />
                         
                         <Card.Text>Servings</Card.Text>
                         <Card.Text>(Adjusts weight of ingredients required for servings)</Card.Text>
                         <Card.Text>
-                            <span>Calories: {Math.round((props.calories / props.servings) * text)}</span>
+                            <span>Calories: {parseFloat(Math.round((props.calories/props.servings) * text))}</span>
                             <br />
                             <br />
                             <span>Ingredients (Original Servings:{props.servings})</span>
                             <br />
-                            {props.ingredients.map(ingredient => (<li>{ingredient.text} Weight:{Math.round((ingredient.weight / props.servings) * text)}g
+                            {props.ingredients.map(ingredient => (<li>{ingredient.text} Weight:{parseFloat(Math.round((ingredient.weight / props.servings) * text))}g
                             </li>)
                             )}
                         </Card.Text>
@@ -97,9 +91,9 @@ function MealChoices(props) {
                             </Card.Header>
                             <Accordion.Collapse eventKey="0">
                                 <Card.Body>
-                                    {nutFat[1]} {Math.round((nutFat[2]/props.servings)*text)}{nutFat[0]} 
+                                    {nutFat[1]} {(Math.round((nutFat[2]/props.servings)*text))}{nutFat[0]} 
                                     <br/>
-                                    {nutChol[1]} {Math.round((nutChol[2]/props.servings)*text)}{nutChol[0]} 
+                                    {nutChol[1]} {(Math.round((nutChol[2]/props.servings)*text))}{nutChol[0]} 
                                     <br/>
                                     {nutCarbs[1]} {Math.round((nutCarbs[2]/props.servings)*text)}{nutCarbs[0]}
                                     <br/>
@@ -115,10 +109,7 @@ function MealChoices(props) {
 
                 </Card.Body>
             </Card>
-      
-
-
-
+    
         </>
     );
 }
