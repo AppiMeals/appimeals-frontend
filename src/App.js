@@ -21,16 +21,18 @@ import Footer from './Components/Footer/Footer';
 import './App.css';
 
 
-let authUser = "";
-if (JSON.parse(sessionStorage.getItem('AppiMealsAuthUser') === null)){
-  authUser = null;
-}
-else {
-  console.log("AppiMealsAuthUser " + JSON.parse(sessionStorage.getItem('AppiMealsAuthUser')));
-  authUser = 1;
-}
+// let authUser = "";
+// if (JSON.parse(sessionStorage.getItem('AppiMealsAuthUser') === null)){
+//   authUser = null;
+// }
+// else {
+//   console.log("AppiMealsAuthUser " + JSON.parse(sessionStorage.getItem('AppiMealsAuthUser')));
+//   authUser = 1;
+// }
+
 
 class App extends Component {
+  
 
   render() {
 
@@ -39,7 +41,7 @@ class App extends Component {
           <div className="app-body">
             <div className="main-wrapper">
             <Router>
-              <NavBar authUser={authUser} />
+              <NavBar />
               <div className="content">
               <Router>
                 <Route path="/" component={HomePage} exact />
