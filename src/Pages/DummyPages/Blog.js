@@ -1,5 +1,5 @@
 import React, { Component}  from 'react';
-import {Nav} from 'react-bootstrap';
+
 import "./Blog.css";
 
 class Blog extends Component {
@@ -40,9 +40,18 @@ class Blog extends Component {
                         While wrangling the in’s and out’s of React, we each have learned so much and look forward to adding these features in future:</p>
 
                         <ul>
-                            <li>This</li> 
-                            <li>This</li> 
-                            <li>And That</li> 
+                            <li>
+                                Process Tutorial Videos – Tutorials hosted by appiMeal founders, 
+                                guiding you along your journey.</li>
+                            <li>
+                                Diet Goals Feature – Based on your past meal preferences, appiMeal 
+                                will suggest the right diet for you and you will be able to track 
+                                your progress.
+                            </li>
+                            <li>
+                                4-Week Meal Selection – Look forward to being able to do your meal 
+                                planning as far as a month in advance!
+                            </li>
                         </ul>
                             
                         <p>We are ever so grateful to our growing appiMeals family and look forward to announcing these features in the near future.  
