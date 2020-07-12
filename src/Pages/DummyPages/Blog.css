@@ -1,0 +1,13 @@
+@media all  {
+    .container {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin: 0 auto;
+      width: 60%;
+      background-color: #f8f9fa;
+    }
+  }
+
+.row {
+    text-align: left;
+}

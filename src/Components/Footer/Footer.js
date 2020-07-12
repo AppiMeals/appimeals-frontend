@@ -2,9 +2,7 @@ import React from 'react';
 import Logo from '../../Images/logo-round_text.svg';
 import './Footer.css';
 
-import { Image, ListGroup } from 'react-bootstrap';
-
-import { Link } from 'react-router-dom';
+import { Image, Nav, ListGroup } from 'react-bootstrap';
 
 const Footer = () => (
     <>
@@ -13,9 +11,9 @@ const Footer = () => (
                 <Image className="app-logo" src={Logo}/>
 
                 <ListGroup className="footer-elements" horizontal>
-                    <Link className="contact-page" to="">Contact Us</Link>
-                    <Link className="about-page" to="">About Us &amp; FAQ</Link>
-                    <Link className="blog-page" to="">Blog</Link>
+                     <Nav.Link href="/ContactUs">Contact Us</Nav.Link>
+                    <Nav.Link href="/FAQ">About Us &amp; FAQ</Nav.Link>
+                    <Nav.Link href="/Blog">Blog</Nav.Link>
                 </ListGroup>
 
                 <p className="copyright-text">
