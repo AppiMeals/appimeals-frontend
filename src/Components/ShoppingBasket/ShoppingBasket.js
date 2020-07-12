@@ -14,16 +14,20 @@ const ShoppingBasket = (props) => {
     return (
         <>
         <div className = "form-inline recipeBaskett">
-        <Card style={{ width: '30rem' }}>
-                <Card.Header className = "headerName">Recipe Name</Card.Header>
+  
+               
                 <ListGroup variant="flush">
-                    <ListGroup.Item>{props.name}
-                        <Button className = "delete__button" variant="secondary">X</Button>
+                    <ListGroup.Item>
+                
+                    {props.ingredients.map(ingredient => (<li>{ingredient.text}
+                            </li>)
+                            )}
+                      
                     </ListGroup.Item>
                     
     
                 </ListGroup>
-            </Card>
+           
 
         </div>
             
