@@ -55,17 +55,20 @@ function MealChoices(props) {
         <>
 
             <Card className="mealChoicesCard" >
-                <Card.Header><h5>{props.day}</h5><button className="delete__button" onClick={handleDeleteClick}>x</button></Card.Header>
+                <Card.Header><h5>{props.day}</h5>
+                    <Button size="sm" className="delete__button" onClick={handleDeleteClick}>X</Button>
+                </Card.Header>
+
                 <Card.Body className = "Cardbody">
 
-                    <Image className="recipeImage" src={props.image} roundedCircle />
+                    <Image className="recipeImage" src={props.image} responsive />
                    
                     <Card.Title>{props.title}</Card.Title>
                 
-                    <Button className = "primaryT" size="sm" onClick={handleTextChange}> + </Button>{' '}
+                    <Button className = "servingsComp" size="sm" onClick={handleTextChange}> + </Button>{' '}
                     {parseFloat( text )}{' '}
                     <Button size="sm" onClick={handleMinusChange}> - </Button>{' '}
-                    <Card.Text>Servings</Card.Text>
+                    <Card.Text className = "servingsComp">Servings</Card.Text>
                     <Card.Text className = "adjustHeading">(Adjusts weight of ingredients required for servings)</Card.Text>
                     <Card.Text>
                         <h6>Ingredients (Original Servings:{props.servings})</h6>

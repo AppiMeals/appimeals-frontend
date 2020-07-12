@@ -1,28 +1,20 @@
 .meals-Card{
-    padding: 0 60px;
-    background-Color: rgba(52, 52, 52, 0.8)
-
+    padding: 40px;
 }
 
 
-@media only screen and (max-width: 1130px) {
-    .meals-Card {
-        width: auto;
-    }
 
+.delete__button {
+    position: absolute;
+    background-color: rgba(31, 25, 25, 0.8) !important;
+    border: none !important;
+    opacity: 1;  
+    color: #ffffff !important;
+    top: 10px;
+    right: 10px;
 }
 
-@media only screen and (max-width: 670px) {
-    .meals-Card  {
-        margin: auto;
-        width: 70vw;
-    }
 
-}
-
-@media only screen and (max-width: 550px) {
-    .meals-Card  {
-        margin: auto;
-        width: auto;
-    }
+.delete__button:hover{
+    opacity: 0.5;
 }
