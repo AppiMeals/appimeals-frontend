@@ -8,11 +8,7 @@ import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
 
 
 import {
-    CardDeck,
-    Button,
     Card,
-    Form,
-    Accordion
 } from 'react-bootstrap';
 
 
@@ -20,6 +16,8 @@ import {
 const MyMealChoices = (props) => {
     
     const [recipes, setRecipes] = useState([]);
+    let sortedRecipes = [];
+
 
     useEffect(() => {
         //GET RECIPES
@@ -27,25 +25,26 @@ const MyMealChoices = (props) => {
             .get(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/MyMealChoices`)
             .then(response => {
                 console.log(response.data.recipesData)
-                setRecipes(response.data.recipesData.sort(sortFunction))
+                setRecipes(response.data.recipesData)
             })
             .catch(
                 (error) => {
                     console.log('Error fetching data', error)
                 })
-    }, [recipes]);
+    }, []);
 
     const deleteRecipe = (id) => {
         axios
             .delete(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/MyMealChoices/${id}`)
             .then(response => {
                 console.log(response)
-                const updatedRecipeList = recipes.filter(recipe => recipe.myMeals_dbid !== id);
-                setRecipes(updatedRecipeList);
             })
             .catch((error) => {
                 console.log(error.response)
             })
+
+            const updatedRecipeList = recipes.filter(recipe => recipe.myMeals_dbid !== id);
+            setRecipes(updatedRecipeList);
     }
 
     const sorted = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -55,10 +54,9 @@ const MyMealChoices = (props) => {
         let day2 = sorted.indexOf(b.recipe_day);
         return day1 < day2 ? -1 : 1;
     }
-
-
-
-
+    
+    // Sorting the recipes and saving them in new variable 
+    sortedRecipes = recipes.sort(sortFunction);
 
     return (
         <>
@@ -66,7 +64,7 @@ const MyMealChoices = (props) => {
                 <h1>My Meal Choices</h1>
 
                 <Card className="meals-monday">
-                    {recipes.map(recipe => 
+                    {sortedRecipes.map(recipe => 
                         <MealChoices
                             deleteRecipe={deleteRecipe}
                             key={recipe.myMeals_dbid}

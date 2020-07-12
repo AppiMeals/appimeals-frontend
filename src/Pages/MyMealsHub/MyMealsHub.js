@@ -10,6 +10,7 @@ import '../MyMealsHub/MyMealsHub.css';
 const MyMealsHub = (props) => {
 
    const [recipes, setRecipes] = useState([]);
+   let sortedRecipes = [];
 
      useEffect(() => {
          //GET RECIPES
@@ -17,25 +18,25 @@ const MyMealsHub = (props) => {
              .get(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/MyMealsHub`)
              .then(response => {
                  console.log(response.data.recipesData)
-                 setRecipes(response.data.recipesData.sort(sortFunction))
+                 setRecipes(response.data.recipesData)
              })
              .catch(
                  (error) => {
                      console.log('Error fetching data', error)
                  })
-     }, [recipes]);
+     }, []);
  
      const deleteRecipe = (id) => {
          axios
              .delete(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/MyMealsHub/${id}`)
              .then(response => {
                  console.log(response)
-                 const updatedRecipeList = recipes.filter(recipe => recipe.myMeals_dbid !== id);
-                 setRecipes(updatedRecipeList);
              })
              .catch((error) => {
                  console.log(error.response)
              })
+            const updatedRecipeList = recipes.filter(recipe => recipe.myMeals_dbid !== id);
+            setRecipes(updatedRecipeList);
      }
  
      const sorted = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -45,7 +46,9 @@ const MyMealsHub = (props) => {
          let day2 = sorted.indexOf(b.recipe_day);
          return day1 < day2 ? -1 : 1;
      }
-
+     
+    // Sorting the recipes and saving them in new variable 
+       sortedRecipes = recipes.sort(sortFunction);
 
     return (
         <>
@@ -58,7 +61,7 @@ const MyMealsHub = (props) => {
                         <div className="row">
                             <div className="box1 col-12">
                                 <CardGroup className="card-group">
-                                {recipes.map(recipe => (
+                                {sortedRecipes.map(recipe => (
                                     <UpcomingMealsCard
                                     key={recipe.myMeals_dbid}
                                     id={recipe.myMeals_dbid}
