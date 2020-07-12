@@ -19,7 +19,7 @@ const MyUpcomingMealsCard = (props) => {
         <Card className="card-item">
             <Image className="card-image" src={props.image}  />
             <Button className="close-button" onClick={handleDeleteClick}>X</Button>
-            <Card.Body>
+            <Card.Body className="card-body">
               <Card.Title>{props.day}</Card.Title>
               <Card.Text className="text-field">
                 {props.title}

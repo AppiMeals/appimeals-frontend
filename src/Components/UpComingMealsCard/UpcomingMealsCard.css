@@ -1,11 +1,46 @@
 .card-group{
-    
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    overflow-wrap: break-word;
+
+}
+
+/* .card-body {
+
+} */
+
+.card-image {
+    width: 100%;
 }
 
 .text-field {
-    min-height: max-content;
+    height: 2rem;
 }
 
 .card-item {
-    width: 20vw;
+    width: auto;
+}
+
+@media only screen and (max-width: 1130px) {
+    .card-item {
+        width: auto;
+    }
+
+}
+
+@media only screen and (max-width: 670px) {
+    .card-item {
+        margin: auto;
+        width: 70vw;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+    .card-group {
+        margin: auto;
+        width: auto;
+    }
+
 }
