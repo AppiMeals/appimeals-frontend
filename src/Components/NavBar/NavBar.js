@@ -1,11 +1,8 @@
-//import React, { useContext, useState } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import {Navbar, Nav, Button, Image} from 'react-bootstrap';
 import Logo from '../../../src/Images/logo-round_image-text-next.svg';
 import "../../../src/Components/NavBar/NavBar.css"
 import { Component } from 'react';
-// import { sectionFooterSecondaryContent } from 'aws-amplify';
-// import {createBrowserHistory} from 'history';
 
 const user = JSON.parse(sessionStorage.getItem('AppiMealsAuthUser'));
 const user1 = user;
@@ -14,6 +11,7 @@ const user2 = user;
 class NavBar extends Component {
     
     render(){
+
         return (
             <>
             <header>

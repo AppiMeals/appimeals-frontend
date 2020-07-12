@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 import  { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import "./Registration.css";
 
 import { Container, Row, Col, Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 
@@ -60,11 +61,13 @@ function SubmitRegistration() {
 
 return(
     <>
-    <form onSubmit={handleSubmit}>
+    <h1>&nbsp;</h1>
+    <form onSubmit={handleSubmit} className="Register">
+    
     <Container>
         <Row>
-            <Col>
-            <FormGroup controlId="firstName" size="large">
+            <Col className="col-6">
+            <FormGroup controlId="firstName">
                 <FormLabel>First Name</FormLabel>
                 <FormControl
                     autoFocus
@@ -75,7 +78,8 @@ return(
                 />
                 </FormGroup>
             </Col>
-            <FormGroup controlId="surname" size="large">
+            <Col className="col-6">
+            <FormGroup controlId="surname">
                 <FormLabel>Surname</FormLabel>
                 <FormControl
                     autoFocus
@@ -84,10 +88,11 @@ return(
                     onChange={e => setSurname(e.target.value)}
                 />
             </FormGroup>
+            </Col>
         </Row>
         <Row>
-            <Col>
-            <FormGroup controlId="email" size="large">
+            <Col className="col-12">
+            <FormGroup controlId="email">
                 <FormLabel>Email</FormLabel>
                 <FormControl
                     autoFocus
@@ -97,13 +102,10 @@ return(
                 />
             </FormGroup>
             </Col>
-            <Col>
-                &nbsp;
-            </Col>
         </Row>
         <Row>
-            <Col>
-            <FormGroup controlId="password" size="large">
+            <Col className="col-6">
+            <FormGroup controlId="password">
                 <FormLabel>Password</FormLabel>
                 <FormControl
                     value={password}
@@ -112,7 +114,9 @@ return(
                 />
             </FormGroup>
             </Col>
-            <FormGroup controlId="confirmPassword" size="large">
+
+            <Col className="col-6">
+            <FormGroup controlId="confirmPassword">
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl
                     value={confirmPassword}
@@ -120,11 +124,11 @@ return(
                     type="password"
                 />
             </FormGroup>
+            </Col>
         </Row>
         <Row>
-            <Col>
+            <Col className="col-12">
             <Button 
-                block size="large" 
                 disabled={!validateForm()} 
                 type="submit"
                 onClick={handleSubmit}>

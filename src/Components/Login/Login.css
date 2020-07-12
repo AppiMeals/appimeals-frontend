@@ -1,10 +1,21 @@
-@media all and (min-width: 480px) {
+@media all  {
     .Login {
-      padding: 60px 0;
-    }
-  
-    .Login form {
+      padding-top: 30px;
+      padding-bottom: 30px;
       margin: 0 auto;
-      max-width: 320px;
+      width: 60%;
+      background-color: #f8f9fa;
     }
   }
+
+.form-label{
+  padding-left: 0px;
+}
+
+.form-control{
+  max-width: 90%;
+}
+
+
+
+
