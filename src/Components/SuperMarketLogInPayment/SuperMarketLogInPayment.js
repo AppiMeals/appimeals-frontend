@@ -2,7 +2,7 @@ import React from 'react';
 //import { Card, Button, ListGroup, Form, Col } from 'react-bootstrap';
 import { Button, Form, Col } from 'react-bootstrap';
 import '../SuperMarketLogInPayment/SuperMarketLogInPayment.css';
-
+import { Link } from 'react-router-dom';
 
 
 const SuperMarketLogInPayment = () => {
@@ -61,7 +61,7 @@ const SuperMarketLogInPayment = () => {
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridState">
-                        <Form.Label>State</Form.Label>
+                        <Form.Label>County/State</Form.Label>
                         <Form.Control as="select" value="Choose...">
                             <option>Choose...</option>
                             <option>...</option>
@@ -74,13 +74,13 @@ const SuperMarketLogInPayment = () => {
                     </Form.Group>
                 </Form.Row>
 
-                <Form.Group id="formGridCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+            
 
                 <Button variant="primary" type="submit">
                     Submit
                     </Button>
+
+                    <Link to={"/MyMealShop"}> <Button> Cancel</Button></Link>
             </Form>
 
         </>
