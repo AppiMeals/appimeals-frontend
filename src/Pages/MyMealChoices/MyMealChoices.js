@@ -60,10 +60,10 @@ const MyMealChoices = (props) => {
 
     return (
         <>
-            <div className="main__section__MyMealChoices ">
+            <div className="main__section__MyMealChoices">
                 <h1>My Meal Choices</h1>
 
-                <Card className="meals-monday">
+                <Card className="meals-Card">
                     {sortedRecipes.map(recipe => 
                         <MealChoices
                             deleteRecipe={deleteRecipe}
