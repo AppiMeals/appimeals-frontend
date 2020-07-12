@@ -3,16 +3,16 @@
     justify-content: space-evenly;
     flex-direction: column;
     overflow-wrap: break-word;
-
 }
 
-/* .card-body {
-
-} */
+.card-item {
+    max-width: 300px;
+    overflow-wrap: break-word;
+}
 
 .card-image {
     width: 100%;
-}
+} 
 
 .text-field {
     height: 2rem;

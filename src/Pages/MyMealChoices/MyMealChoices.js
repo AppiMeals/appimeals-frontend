@@ -33,7 +33,7 @@ const MyMealChoices = (props) => {
                 (error) => {
                     console.log('Error fetching data', error)
                 })
-    }, []);
+    });
 
     const deleteRecipe = (id) => {
         axios

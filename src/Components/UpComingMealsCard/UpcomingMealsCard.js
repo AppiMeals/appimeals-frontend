@@ -15,7 +15,6 @@ const MyUpcomingMealsCard = (props) => {
     <>
       <header>
         <CardGroup className="card-group">
-
         <Card className="card-item">
             <Image className="card-image" src={props.image}  />
             <Button className="close-button" onClick={handleDeleteClick}>X</Button>
