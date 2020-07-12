@@ -18,40 +18,45 @@ import {
 
 
 const MyMealChoices = (props) => {
+    
     const [recipes, setRecipes] = useState([]);
-    const [search, setSearch] = useState('');
-    const [query, setQuery] = useState('');
 
-    //Use Effect should update the with the 
     useEffect(() => {
         //GET RECIPES
         axios
-            .get(`https://api.edamam.com/search?q=chicken&app_id=7accd594&app_key=2195a4b3a84812fdec32734983392e27&from=0&to=3&calories=591-1000`)
-            .then(
-                response => {
-                    setRecipes(response.data.hits)
-                }
-            )
+            .get(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/MyMealChoices`)
+            .then(response => {
+                console.log(response.data.recipesData)
+                setRecipes(response.data.recipesData.sort(sortFunction))
+            })
             .catch(
                 (error) => {
                     console.log('Error fetching data', error)
-                }
-            )
-    }, [query]);
-    //Update the string in the search bar onChange
-    const updateSearch = e => {
-        setSearch(e.target.value);
+                })
+    }, []);
+
+    const deleteRecipe = (id) => {
+        axios
+            .delete(`https://xzg3a8az08.execute-api.eu-west-2.amazonaws.com/dev/MyMealChoices/${id}`)
+            .then(response => {
+                console.log(response)
+                const updatedRecipeList = recipes.filter(recipe => recipe.myMeals_dbid !== id);
+                setRecipes(updatedRecipeList);
+            })
+            .catch((error) => {
+                console.log(error.response)
+            })
     }
-    //Get the value of the search bar and pass it to the query
-    const getSearch = e => {
-        e.preventDefault();
-        setQuery(search);
-        setSearch('');
+
+    const sorted = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+    const sortFunction = (a,b) => {
+        let day1 = sorted.indexOf(a.recipe_day);
+        let day2 = sorted.indexOf(b.recipe_day);
+        return day1 < day2 ? -1 : 1;
     }
-    // function deleteMeal (id) {
-    // const deleteMeals = recipes.filter(recipe => recipe.id !== id);
-    // setRecipes(deleteMeals);
-    // }
+
+
 
 
 
@@ -60,27 +65,144 @@ const MyMealChoices = (props) => {
             <div className="main__section__MyMealChoices ">
                 <h1>My Meal Choices</h1>
 
-                <Card className="meals">
-                    {recipes.map(recipe => (
+                <Card className="meals-monday">
+                    {recipes.map(recipe => 
                         <MealChoices
-                            key={recipe.recipe.uri}
-                            id={recipe.recipe.uri}
-                            title={recipe.recipe.label}
-                            image={recipe.recipe.image}
-                            calories={recipe.recipe.calories}
-                            servings={recipe.recipe.yield}
-                            cookingTime={recipe.recipe.totalTime}
-                            url={recipe.recipe.url}
-                            // deleteRecipe = {deleteMeal}
-                            ingredient={recipe.recipe.ingredients}
-                            nutrients={recipe.recipe.totalNutrients} />
-                    ))}
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            day={recipe.recipe_day}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        />
+                    )}
                 </Card>
 
+                {/* <Card className="meals-Tuesday">
+                    {recipes.map(recipe => recipe.recipe_day === "Tuesday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            day={recipe.recipe_day}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
+                </Card>
 
+                <Card className="meals-Wednesday">
+                    {recipes.map(recipe => recipe.recipe_day === "Wednesday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            day={recipe.recipe_day}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
+                </Card>
 
+                <Card className="meals-Thursday">
+                    {recipes.map(recipe => recipe.recipe_day === "Thursday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            day={recipe.recipe_day}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
+                </Card>
 
+                <Card className="meals-Friday">
+                    {recipes.map(recipe => recipe.recipe_day === "Friday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            day={recipe.recipe_day}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
+                </Card>
 
+                <Card className="meals-Saturday">
+                    {recipes.map(recipe => recipe.recipe_day === "Saturday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            day={recipe.recipe_day}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
+                </Card>
+
+                <Card className="meals-Sunday">
+                    {recipes.map(recipe => recipe.recipe_day === "Sunday" ?
+                        <MealChoices
+                            deleteRecipe={deleteRecipe}
+                            key={recipe.myMeals_dbid}
+                            id={recipe.myMeals_dbid}
+                            title={recipe.recipe_title}
+                            image={recipe.recipe_image}
+                            calories={recipe.recipe_calories}
+                            servings={recipe.recipe_yield}
+                            cookingTime={recipe.recipe_totalTime}
+                            diet={recipe.recipe_dietLabels}
+                            url={recipe.recipe_url}
+                            ingredients={JSON.parse(recipe.recipe_ingredients)}
+                            nutrients={JSON.parse(recipe.recipe_nutrients)}
+                        /> : ""
+                    )}
+                </Card> */}
 
             </div>
         </>

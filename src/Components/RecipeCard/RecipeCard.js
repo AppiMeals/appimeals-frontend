@@ -35,24 +35,20 @@ const RecipeCard = (props) => {
 
                         <Card.Link href={props.url} target={"_blank"} >View Recipe</Card.Link>
                         <br />
-                        <span className="button-group">
-
                         <Dropdown onSelect={handleSelect}>
                             <Dropdown.Toggle variant="primary" id="dropdown-basic">
                                 Select Day
                             </Dropdown.Toggle>
-
                             <Dropdown.Menu>
-                                <Dropdown.Item eventKey="Monday" >Monday</Dropdown.Item>
-                                <Dropdown.Item eventKey="Tuesday" >Tuesday</Dropdown.Item>
-                                <Dropdown.Item eventKey="Wednsday" >Wednsday</Dropdown.Item>
-                                <Dropdown.Item eventKey="Thursday" >Thursday</Dropdown.Item>
-                                <Dropdown.Item eventKey="Friday" >Friday</Dropdown.Item>
-                                <Dropdown.Item eventKey="Saturday" >Saturday</Dropdown.Item>
-                                <Dropdown.Item eventKey="Sunday" >Sunday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Monday">Monday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Tuesday">Tuesday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Wednesday">Wednesday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Thursday">Thursday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Friday">Friday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Saturday">Saturday</Dropdown.Item>
+                                <Dropdown.Item eventKey="Sunday">Sunday</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
-                        </span>
                     </Card.Body>
                 </Card>
             </CardGroup>
