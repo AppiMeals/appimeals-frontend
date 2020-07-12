@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import  { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl, FormLabel} from "react-bootstrap";
 import "./Login.css";
 
 export default function Login() {
@@ -13,7 +13,6 @@ export default function Login() {
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
-
   // Display data that gets submitted here
   function handleSubmit(event) {
     event.preventDefault();
@@ -34,12 +33,10 @@ export default function Login() {
                 }
                 else{
                   setPrintError("");
-                  //localStorage.setItem('AppiMealsAuthUser', JSON.stringify(response.data.email["0"]));
-
                   sessionStorage.setItem('AppiMealsAuthUser', JSON.stringify(response.data.email["0"]));
-                  console.log("Session Created. " + JSON.parse(sessionStorage.getItem('AppiMealsAuthUser')));
-
                   history.push("/MyMealsHub");
+
+
                 }
               })
           .catch(
@@ -49,36 +46,45 @@ export default function Login() {
     }
 
     return (
-      <div className="Login">
-    
-      <form onSubmit={handleSubmit}>
-        {printError}
-        <FormGroup controlId="email" size="large">
-          <FormLabel>Email</FormLabel>
-          <FormControl
-            autoFocus
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup controlId="password" size="large">
-          <FormLabel>Password</FormLabel>
-          <FormControl
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            type="password"
-          />
-        </FormGroup>
-        <Button 
-          block size="large" 
-          disabled={!validateForm()} 
-          type="submit"
-          onClick={handleSubmit}>
-          Login
-        </Button>
-        
+      <div className="container">
+        <h1>&nbsp;</h1>
+        <form onSubmit={handleSubmit} className="Login">
+          
+
+            {
+              printError ? <div className="alert alert-danger" role="alert">{printError}</div> : null
+            }
+            <FormGroup controlId="email">
+              <FormLabel>Email</FormLabel>
+              <FormControl  
+                autoFocus
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </FormGroup>
+
+            <FormGroup controlId="password">
+              <FormLabel>Password</FormLabel>
+              <FormControl 
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                type="password"
+              />
+            </FormGroup>
+
+            <Button 
+              disabled={!validateForm()} 
+              type="submit"
+              onClick={handleSubmit}>
+              Let's Get Cooking!
+            </Button>
+
       </form>
-    </div>
+      </div>
+
+
+
+
   );
 }
