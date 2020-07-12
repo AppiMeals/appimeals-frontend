@@ -10,7 +10,7 @@ import MealChoices from '../../Components/MealChoices/MealChoices';
 
 
 const ShoppingBasket = (props) => {
-    const [name, setName] = useState("");
+  
     return (
         <>
         <div className = "form-inline recipeBaskett">
