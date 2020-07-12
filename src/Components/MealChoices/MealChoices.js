@@ -57,9 +57,9 @@ function MealChoices(props) {
             <Card className="mealChoicesCard" xs={2} md={4} lg={6}>
                 <Card.Header>{props.day}<button className="delete__button" onClick={handleDeleteClick}>x</button></Card.Header>
                 <Card.Body>
-                    <Container>
+                
                         <Image className="recipeImage" src={props.image} roundedCircle />
-                    </Container>
+             
 
                         <Card.Title>{props.title}</Card.Title>
            
