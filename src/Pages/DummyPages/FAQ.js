@@ -8,7 +8,57 @@ class FAQ extends Component {
 
         return (
             <>
-                <h1>FAQ</h1>
+                <h1>About Us</h1>
+
+                <div className="container">
+
+                    <div className="row">
+                        <div className="col-2">
+                            [photo]
+                        </div>
+                        <div className="col">
+                            Personal Statement from CV
+                        </div>
+                    </div>
+
+<p>&nbsp;</p>
+
+                    <div className="row">
+                        <div className="col-2">
+                            [photo]
+                        </div>
+                        <div className="col">
+                            Personal Statement from CV
+                        </div>
+                    </div>
+
+
+                    <p>&nbsp;</p>
+
+                    <div className="row">
+                        <div className="col-2">
+                            [photo]
+                        </div>
+                        <div className="col">
+                            Personal Statement from CV
+                        </div>
+                    </div>
+
+<p>&nbsp;</p>
+
+
+                    <div className="row">
+                        <div className="col-2">
+                            [photo]
+                        </div>
+                        <div className="col">
+                            Personal Statement from CV
+                        </div>
+                    </div>
+
+                </div>
+
+
             </>
         )
     }
