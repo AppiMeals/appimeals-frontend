@@ -150,10 +150,7 @@ const BrowseRecipes = () => {
                             calories={recipe.recipe.calories}
                             servings={recipe.recipe.yield}
                             cookingTime={recipe.recipe.totalTime}
-                            diet={recipe.recipe.dietLabels}
                             url={recipe.recipe.url}
-                            ingredients={recipe.recipe.ingredients}
-                            nutrients={recipe.recipe.nutrients}
                              />
                     ))}
                 </CardDeck>

@@ -1,11 +1,8 @@
 .box1{
-    border: solid 2px grey;
-
+    border: solid 1px rgba(121, 121, 121, 0.445);
     border-radius: 5px;
-
     padding: 40px;
-
-    background-color:grey;
+    background-color:rgba(138, 138, 138, 0.2);
 }
 
 .BrowseCatagoryCardBackground{
@@ -14,11 +11,33 @@
 
 .BrowseMealsButton{
     width: 100%;
-    height:100%;
 }
 
 .MainSectionMyMealsHubContainer {
     margin: 1.5rem;
     justify-content: center;
 }
+
+.close-button {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1) !important;
+    border-width: 2px !important;
+    opacity: 0.5;  
+    color: #007bff !important;
+    top: 10px;
+    left: 10px;
+}
+
+.close-button:hover {
+    opacity: 1;
+}
+
+.close-button:before {
+    transform: rotate(45deg);
+}
+
+  .close-button:after {
+    transform: rotate(-45deg);
+}
+
 

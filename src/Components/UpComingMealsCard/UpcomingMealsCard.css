@@ -1,3 +1,11 @@
 .card-group{
-    background-color: coral;
+    
+}
+
+.text-field {
+    min-height: max-content;
+}
+
+.card-item {
+    width: 20vw;
 }
