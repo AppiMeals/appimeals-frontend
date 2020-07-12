@@ -29,8 +29,6 @@ const RecipeCard = (props) => {
                             <br />
                             <span>Servings: {props.servings}</span>
                             <br />
-                            <span>Diet: {props.diet}</span>
-                            <br />
                         </Card.Text>
 
                         <Card.Link href={props.url} target={"_blank"} >View Recipe</Card.Link>

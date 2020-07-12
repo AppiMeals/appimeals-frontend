@@ -8,7 +8,8 @@
 }
 
 .search-form {
-    min-height: 10vh;
+    margin: auto;
+    max-width: 50vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,4 +28,11 @@
     display: inline-block;
     width: fit-content;
     justify-content: center;
+}
+
+@media only screen and (max-width: 950px) {
+    .search-form {     
+        min-width: 30vh;
+    }
+
 }
