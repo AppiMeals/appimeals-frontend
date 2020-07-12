@@ -1,14 +1,39 @@
 .mealChoicesCard{
-    margin:1rem ;
     border-radius: 100px;
     box-shadow: 0px 1px black;
     margin: 20px;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    max-width: auto;
+    overflow-wrap: break-word;
+    text-align: left;
+   
+ 
+}
+.cardBody{
+    background-color:rgba(138, 138, 138, 0.2);
+}
+@media only screen and (max-width: 1130px) {
+    .mealChoicesCard {
+        width: auto;
+    }
+
+}
+.nutritionalInfo{
+    float: left;
+    text-align: left;
+
+}
+.primaryT{
+
+
+    border-radius: 10px;
 }
 
-
+.nutritionToggle{
+    text-align: left;
+    position: relative;
+}
     
 .recipeImage{
     border-radius: 60%;
@@ -18,7 +43,30 @@
 
 }
 
-.adjust__servings{
-    float: left;
+.adjustHeading{
+    font-size: x-small;
 }
+
+
+
+.delete__button {
+    position: absolute;
+    background-color: rgba(31, 25, 25, 0.8) !important;
+    border: none !important;
+    opacity: 1;  
+    color: #ffffff !important;
+    top: 10px;
+    right: 10px;
+}
+
+.delete__button:hover {
+    opacity: 0.5;
+}
+
+
+.ingredientList{
+    list-style-type: none;
+
+}
+
 

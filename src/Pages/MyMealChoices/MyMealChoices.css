@@ -1,1 +1,28 @@
+.meals-Card{
+    padding: 0 60px;
+    background-Color: rgba(52, 52, 52, 0.8)
 
+}
+
+
+@media only screen and (max-width: 1130px) {
+    .meals-Card {
+        width: auto;
+    }
+
+}
+
+@media only screen and (max-width: 670px) {
+    .meals-Card  {
+        margin: auto;
+        width: 70vw;
+    }
+
+}
+
+@media only screen and (max-width: 550px) {
+    .meals-Card  {
+        margin: auto;
+        width: auto;
+    }
+}
