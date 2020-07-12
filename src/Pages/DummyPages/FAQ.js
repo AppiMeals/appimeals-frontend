@@ -1,7 +1,11 @@
 import React,  { Component }  from 'react';
 import { Image } from 'react-bootstrap';
+// OUR TEAM!!!  =D
 import Nichole from '../../Images/Nichole-head-shot-500x500.png';
 import Jennifer from '../../Images/Jennifer-head-shot-810x810.png';
+import Illiyan from '../../Images/Illiyan-head-shot-540x540.png';
+import Shobir from '../../Images/Shobir-head-shot-441x441.png';
+
 import "./FAQ.css";
 
 class FAQ extends Component {
@@ -54,10 +58,16 @@ class FAQ extends Component {
 
                     <div className="row">
                         <div className="col-3">
-                            [photo]
+                        <Image className="image" src={Illiyan}/> <br />
+                            Illiyan Dimitrov
                         </div>
                         <div className="col">
-                            Personal Statement from CV
+                        Self driven, friendly individual with big ambitions to build a solid career into Software 
+                        Development. Completed the Tech Returners program "Your Journey Into Tech" recently. By doing 
+                        so I built rock-hard foundations in the Web Development processes. Worked as Process Engineer 
+                        in the past. This involved me collaborating with developers, joining their catch ups, sprint 
+                        planning and retrospectives. Discussing the projects technical aspects and finding the optimal 
+                        business satisfactory solutions we can build in the frames provided.
                         </div>
                     </div>
 
@@ -66,10 +76,15 @@ class FAQ extends Component {
 
                     <div className="row">
                         <div className="col-3">
-                            [photo]
+                        <Image className="image" src={Shobir}/> <br />
+                            Shobir Chowdhery
                         </div>
                         <div className="col">
-                            Personal Statement from CV
+                        Experienced analyst within analytical, software, data and finance roles. Looking to transfer 
+                        skill set of problem solving, data, communication, project management and teamwork into a Software 
+                        developer career. Motivated and driven to expand experience and knowledge in this field. Currently 
+                        project leading data migration and providing project support within a software-based project team, 
+                        collaborating with developers and key stakeholders within management.
                         </div>
                     </div>
 
