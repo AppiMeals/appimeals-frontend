@@ -1,27 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
-
 import '../MyMealShop/MyMealShop.css';
 import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
 import SuperMarketTotals from '../../Components/SuperMarketTotals/SuperMarketTotals';
-//import Logo from '../../Images/logo5-200x200.png';
-//import Image from 'react-bootstrap/Image';
-import {
-    CardDeck,
-    Button,
-    Card,
-    Form,
-    Accordion
-} from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
-
-
-//import { Link } from 'react-router-dom';
 const MyMealShop = (props) => {
-    
     const [recipes, setRecipes] = useState([]);
-
     useEffect(() => {
         //GET RECIPES
         axios
@@ -43,9 +28,6 @@ const MyMealShop = (props) => {
         let day2 = sorted.indexOf(b.recipe_day);
         return day1 < day2 ? -1 : 1;
     }
-
-    
-
 
     return (
         <> 

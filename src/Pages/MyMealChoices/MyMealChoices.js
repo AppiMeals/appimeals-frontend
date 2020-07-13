@@ -1,23 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
 import '../MyMealChoices/MyMealChoices.css';
 import MealChoices from '../../Components/MealChoices/MealChoices';
-import TotalPrice from '../../Components/TotalPrice/TotalPrice';
-import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
-
-
-import {
-    Card,
-} from 'react-bootstrap';
-
-
+//import TotalPrice from '../../Components/TotalPrice/TotalPrice';
+//import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
+import { Card } from 'react-bootstrap';
 
 const MyMealChoices = (props) => {
     
     const [recipes, setRecipes] = useState([]);
     let sortedRecipes = [];
-
 
     useEffect(() => {
         //GET RECIPES
@@ -82,7 +74,6 @@ const MyMealChoices = (props) => {
                         />
                     )}
                 </Card>
-
             </div>
         </>
     )
