@@ -9,12 +9,12 @@ const SuperMarketLogInPayment = () => {
     return (
         <>
 
-            <h2>Total Payment £££</h2>
+            <h2>Total Payment £20.50</h2>
             <Form className="paymentForm">
 
                 <Form.Row >
                     <Form.Group as={Col} controlId="formGridCardDetails">
-                        <Form.Label>Card Number</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control placeholder="Card Number" />
                     </Form.Group>
                 </Form.Row>

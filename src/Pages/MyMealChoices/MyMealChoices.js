@@ -4,8 +4,8 @@ import '../MyMealChoices/MyMealChoices.css';
 import MealChoices from '../../Components/MealChoices/MealChoices';
 //import TotalPrice from '../../Components/TotalPrice/TotalPrice';
 //import ShoppingBasket from '../../Components/ShoppingBasket/ShoppingBasket';
-import { Card } from 'react-bootstrap';
-
+import { Card ,Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 const MyMealChoices = (props) => {
     
     const [recipes, setRecipes] = useState([]);
@@ -54,8 +54,11 @@ const MyMealChoices = (props) => {
         <>
             <div className="main__section__MyMealChoices">
                 <h1>My Meal Choices</h1>
+               
+              
 
                 <Card className="meals-Card">
+                <Link to={"/MyMealShop"}> <Button className = "MyMealShopButton"> My Meal Shop</Button></Link>
                     {sortedRecipes.map(recipe => 
                         <MealChoices
                             deleteRecipe={deleteRecipe}
