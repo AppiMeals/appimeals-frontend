@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
-import  { useHistory } from 'react-router-dom';
+import  { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import "./Registration.css";
 
@@ -117,6 +117,7 @@ return(
                 onClick={handleSubmit}>
                 Sign Up
             </Button>
+            <p>Already have an account? <Link to="/SignIn">Sign In</Link></p>
     </Form>
 
     {/* {console.log("firstName " + firstName)}

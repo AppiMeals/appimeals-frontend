@@ -28,3 +28,8 @@ button {
   width: auto;
   align-self: center;
 }
+
+p {
+  padding: 0.2rem;
+  font-size: 0.9rem;
+}

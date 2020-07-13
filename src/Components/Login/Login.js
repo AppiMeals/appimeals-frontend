@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import  { useHistory } from 'react-router-dom';
+import  { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button, FormGroup, FormControl, FormLabel, Form} from "react-bootstrap";
 import "./Login.css";
@@ -77,6 +77,9 @@ export default function Login() {
             onClick={handleSubmit}>
             Let's Get Cooking!
             </Button>
+
+            <p>Forgot password? <Link to="">Reset password</Link></p>
+            <p>No account? <Link to="/SignUp">Create an account</Link></p>
       </Form>
     </>
   );
