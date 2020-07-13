@@ -79,7 +79,7 @@ const MyMealsHub = (props) => {
 
                     <div>
                         <div>
-                            <h3>Browse Meals by Catagory</h3>
+                            <h3>Browse Meals by Category</h3>
                             <div className="row">
                                 <div className="box1 col-12">
                                     <BrowseCatagoryCard />
