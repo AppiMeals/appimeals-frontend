@@ -1,7 +1,7 @@
 {
   "name": "appimeals-frontend",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "homepage": "https://appimeals.github.io/appimeals-frontend/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.0",
