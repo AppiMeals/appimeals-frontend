@@ -19,7 +19,7 @@ const BrowseRecipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('');
-    const [diet, setDiet] = useState('');
+    const [diet, setDiet] = useState('balanced');
     const [warningTrigger, setWarningTrigger] = useState(false);
 
     //Use Effect should update the with the 

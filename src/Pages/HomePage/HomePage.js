@@ -7,7 +7,6 @@ import './HomePage.css';
 import { Image, Container, Row, Col } from 'react-bootstrap';
 
 const HomePage = () => {
-    
     return (
         <>  
             <div className="main-page">

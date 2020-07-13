@@ -21,8 +21,8 @@ const ToggleSwitch = (props) => {
                     <input type="radio" name="diet" eventKey="high-protein" value="high-protein" id="highProtein" />
                     <label for="highProtein">High-Protein</label>
 
-                    <input type="radio" name="diet" eventKey="high-fiber" value="high-fiber" id="highFiber" />
-                    <label for="highFiber">High-Fiber</label>
+                    {/* <input type="radio" name="diet" eventKey="high-fiber" value="high-fiber" id="highFiber" />
+                    <label for="highFiber">High-Fiber</label> */}
 
                     <input type="radio" name="diet" eventKey="low-fat" value="low-fat" id="lowFat" />
                     <label for="lowFat">Low-Fat</label>
@@ -30,8 +30,8 @@ const ToggleSwitch = (props) => {
                     <input type="radio" name="diet" eventKey="low-carb" value="low-carb" id="lowCarb" />
                     <label for="lowCarb">Low-Carb</label>
 
-                    <input type="radio" name="diet" eventKey="low-sodium" value="low-sodium" id="lowSodium" />
-                    <label for="lowSodium">Low-Sodium</label>
+                    {/* <input type="radio" name="diet" eventKey="low-sodium" value="low-sodium" id="lowSodium" />
+                    <label for="lowSodium">Low-Sodium</label> */}
                 </div>
             </fieldset>
         </>

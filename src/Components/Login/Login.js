@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import  { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { Button, FormGroup, FormControl, FormLabel} from "react-bootstrap";
+import { Button, FormGroup, FormControl, FormLabel, Form} from "react-bootstrap";
 import "./Login.css";
 
 export default function Login() {
@@ -45,46 +45,39 @@ export default function Login() {
               })
     }
 
-    return (
-      <div className="container">
-        <h1>&nbsp;</h1>
-        <form onSubmit={handleSubmit} className="Login">
-          
+  return (
+    <>
+      <Form onSubmit={handleSubmit} className="login form-container">
+        <h1 className="form-header">Sign in</h1>
+          {
+            printError ? <div className="alert alert-danger" role="alert">{printError}</div> : null
+          }
+          <FormGroup className="form-element" controlId="email">
+            <FormLabel>Email</FormLabel>
+            <FormControl
+              autoFocus
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </FormGroup>
 
-            {
-              printError ? <div className="alert alert-danger" role="alert">{printError}</div> : null
-            }
-            <FormGroup controlId="email">
-              <FormLabel>Email</FormLabel>
-              <FormControl  
-                autoFocus
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-              />
-            </FormGroup>
+          <FormGroup className="form-element" scontrolId="password">
+            <FormLabel>Password</FormLabel>
+            <FormControl
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              type="password"
+            />
+          </FormGroup>
 
-            <FormGroup controlId="password">
-              <FormLabel>Password</FormLabel>
-              <FormControl 
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                type="password"
-              />
-            </FormGroup>
-
-            <Button 
-              disabled={!validateForm()} 
-              type="submit"
-              onClick={handleSubmit}>
-              Let's Get Cooking!
+          <Button
+            disabled={!validateForm()}
+            type="submit"
+            onClick={handleSubmit}>
+            Let's Get Cooking!
             </Button>
-
-      </form>
-      </div>
-
-
-
-
+      </Form>
+    </>
   );
 }

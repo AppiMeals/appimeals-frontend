@@ -1,21 +1,30 @@
-@media all  {
-    .Login {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      margin: 0 auto;
-      width: 60%;
-      background-color: #f8f9fa;
-    }
-  }
-
-.form-label{
-  padding-left: 0px;
+.form-container {
+  max-width: 60vw;
+  margin: 10vh auto;
+  padding: 30px 0;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-flow: column wrap;
 }
 
-.form-control{
-  max-width: 90%;
+.form-header {
+  margin-top: -1vh;
+  margin-bottom: 2vh;
 }
 
+.form-element {
+  display: block;
+  width: 70%;
+  margin: auto;
+}
 
+.form-element label, .form-element input {
+  padding: 0;
+  margin: 0;
+}
 
-
+button {
+  display: block;
+  width: auto;
+  align-self: center;
+}

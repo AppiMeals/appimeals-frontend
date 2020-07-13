@@ -4,7 +4,7 @@ import  { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import "./Registration.css";
 
-import { Container, Row, Col, Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { Form, Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 
 
 function SubmitRegistration() {
@@ -61,51 +61,39 @@ function SubmitRegistration() {
 
 return(
     <>
-    <h1>&nbsp;</h1>
-    <form onSubmit={handleSubmit} className="Register">
+    <Form onSubmit={handleSubmit} className="register form-container">
+
+    <h1 className="form-header">Sign Up</h1>
     
-    <Container>
-        <Row>
-            <Col className="col-6">
-            <FormGroup controlId="firstName">
+            <FormGroup className="form-element" controlId="firstName">
                 <FormLabel>First Name</FormLabel>
                 <FormControl
                     autoFocus
-                    className = "textField"
                     type="text"
                     value={firstName}
                     onChange={e => setFirstName(e.target.value)}
                 />
                 </FormGroup>
-            </Col>
-            <Col className="col-6">
-            <FormGroup controlId="surname">
+        
+            <FormGroup className="form-element" controlId="surname">
                 <FormLabel>Surname</FormLabel>
                 <FormControl
-                    autoFocus
                     type="text"
                     value={surname}
                     onChange={e => setSurname(e.target.value)}
                 />
             </FormGroup>
-            </Col>
-        </Row>
-        <Row>
-            <Col className="col-12">
-            <FormGroup controlId="email">
+      
+            <FormGroup className="form-element" controlId="email">
                 <FormLabel>Email</FormLabel>
                 <FormControl
-                    autoFocus
                     type="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
             </FormGroup>
-            </Col>
-        </Row>
-        <Row>
-            <Col className="col-6">
-            <FormGroup controlId="password">
+     
+            <FormGroup className="form-element" controlId="password">
                 <FormLabel>Password</FormLabel>
                 <FormControl
                     value={password}
@@ -113,10 +101,8 @@ return(
                     type="password"
                 />
             </FormGroup>
-            </Col>
 
-            <Col className="col-6">
-            <FormGroup controlId="confirmPassword">
+            <FormGroup className="form-element" controlId="confirmPassword">
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl
                     value={confirmPassword}
@@ -124,20 +110,15 @@ return(
                     type="password"
                 />
             </FormGroup>
-            </Col>
-        </Row>
-        <Row>
-            <Col className="col-12">
+     
             <Button 
                 disabled={!validateForm()} 
                 type="submit"
                 onClick={handleSubmit}>
                 Sign Up
             </Button>
-            </Col>
-        </Row>
-    </Container>
-    </form>
+    </Form>
+
     {/* {console.log("firstName " + firstName)}
     {console.log("surname " + surname)}
     {console.log("email " + email)}
