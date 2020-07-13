@@ -16,16 +16,10 @@
     height: 25px;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 670px) {
     .text-center {
-        width: 100%;
-    }
-
-}
-
-@media only screen and (max-width: 650px) {
-    .text-center {
-        width: 100%;
+        margin: auto;
+        width: 60vw;
     }
 
 }

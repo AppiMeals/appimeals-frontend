@@ -1,5 +1,5 @@
 .form-container {
-  max-width: 40vw;
+  max-width: 25vw;
   margin: 10vh auto;
   padding: 30px 0;
   background-color: #f8f9fa;
@@ -32,4 +32,22 @@ button {
 p {
   padding: 0.2rem;
   font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  .form-container {
+      max-width: 35vw;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .form-container {
+      max-width: 45vw;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .form-container {
+      max-width: 65vw;
+  }
 }

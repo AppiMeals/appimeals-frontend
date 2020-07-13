@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../../src/Images/logo-round_image-text-under.svg';
-import MktgImage1 from '../../Images/1479225-556x370.jpg';
-import MktgImage2 from '../../Images/1471493-556x370.jpg';
+import MktgImage1 from '../../Images/food-plate1.jpg';
+import MktgImage2 from '../../Images/food-plate3.jpg';
 import './HomePage.css';
 
 import { Image, Container, Row, Col } from 'react-bootstrap';

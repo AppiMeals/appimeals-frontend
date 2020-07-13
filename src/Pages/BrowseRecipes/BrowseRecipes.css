@@ -4,7 +4,6 @@
 
 .recipe-container {
     justify-content: center;
-
 }
 
 .search-form {
@@ -34,5 +33,4 @@
     .search-form {     
         min-width: 30vh;
     }
-
 }
