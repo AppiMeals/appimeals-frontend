@@ -1,26 +1,10 @@
-import React, { Component, useState } from 'react';
-import { Card, Button, CardDeck } from 'react-bootstrap';
-import Logo from '../../Images/logo5-200x200.png';
-
-
+import React from 'react';
+import { Card } from 'react-bootstrap';
 import '../TotalPrice/TotalPrice.css';
 
-
 function TotalPrice(props) {
-
-    
-
-   
-
-
-  
-
-
-
-
     return (
         <>
-
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>Total Price</Card.Title>
@@ -33,9 +17,6 @@ function TotalPrice(props) {
                     <Card.Link href="#">Another Link</Card.Link>
                 </Card.Body>
             </Card>
-
-
-
         </>
     );
 }

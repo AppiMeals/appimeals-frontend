@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
-
 import '../MealChoices/MealChoices.css';
 
-import {
-    Card,
-    Button,
-    Container,
-    Image,
-    Accordion
-} from 'react-bootstrap';
-
+import { Card, Button, Image, Accordion } from 'react-bootstrap';
 
 function MealChoices(props) {
     const [text = props.servings, setText] = useState();
@@ -53,7 +45,6 @@ function MealChoices(props) {
 
     return (
         <>
-
             <Card className="mealChoicesCard" >
                 <Card.Header><h5>{props.day}</h5>
                     <Button size="sm" className="delete__button" onClick={handleDeleteClick}>X</Button>
@@ -108,7 +99,6 @@ function MealChoices(props) {
 
                 </Card.Body>
             </Card>
-
         </>
     );
 }

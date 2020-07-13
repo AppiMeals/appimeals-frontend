@@ -1,16 +1,8 @@
-import React, { Component, useState } from 'react';
-import { Card, Button, ListGroup } from 'react-bootstrap';
-//import Logo from '../../Images/logo5-200x200.png';
-
+import React from 'react';
+import { ListGroup } from 'react-bootstrap';
 import '../ShoppingBasket/ShoppingBasket.css';
 
-import MealChoices from '../../Components/MealChoices/MealChoices';
-
-
-
-
 const ShoppingBasket = (props) => {
-  
     return (
         <>
         <div className = "form-inline recipeBaskett">
@@ -27,10 +19,7 @@ const ShoppingBasket = (props) => {
                     
     
                 </ListGroup>
-           
-
-        </div>
-            
+        </div>   
         </>
     )
 };
